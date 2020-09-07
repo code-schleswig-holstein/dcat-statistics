@@ -13,6 +13,7 @@ public class DCATAPde {
     public static final Property originator;
     public static final Property politicalGeocodingLevelURI ;
     public static final Property politicalGeocodingURI ;
+    public static final Property plannedAvailability ;
 
     public DCATAPde() {
     }
@@ -27,5 +28,6 @@ public class DCATAPde {
         originator = m_model.createProperty(NS, "originator");
         politicalGeocodingLevelURI = m_model.createProperty(NS, "politicalGeocodingLevelURI");
         politicalGeocodingURI = m_model.createProperty(NS, "politicalGeocodingURI");
+        plannedAvailability = m_model.createProperty(NS, "plannedAvailability");
     }
 }

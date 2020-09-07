@@ -21,9 +21,6 @@ import java.util.*;
  * Berechnet zu einem DCAT-AP.de konformen Katalog diverse Statistiken.
  */
 public class DcatStatistics {
-    public static final String URL_FILE_TYPES = "http://publications.europa.eu/resource/authority/file-type";
-
-    public static final String URL_LANGUAGES = "http://publications.europa.eu/resource/authority/language";
 
     private static final Logger log = LoggerFactory.getLogger(DcatStatistics.class);
     private static final Property contributorID = ResourceFactory.createProperty("http://dcat-ap.de/def/dcatde/contributorID");
@@ -35,21 +32,22 @@ public class DcatStatistics {
             ResourceFactory.createResource("http://publications.europa.eu/resource/authority/file-type/DOCX"),
             ResourceFactory.createResource("http://publications.europa.eu/resource/authority/file-type/HTML")
     );
-    Statistics global = new Statistics();
-    Map<String, Statistics> statisticsPerContributor = new HashMap<>();
-    Set<String> validFileTypes;
-    Set<String> validLanguages;
-    Set<String> validLicenses;
-    Set<String> validPlannedAvailabilities;
-    Set<String> validPoliticalGeocodingLevels;
-    Set<String> validContributors;
+    final Statistics global = new Statistics();
+    final Map<String, Statistics> statisticsPerContributor = new HashMap<>();
+    private Set<String> validFileTypes;
+    private Set<String> validLanguages;
+    private Set<String> validLicenses;
+    private Set<String> validPlannedAvailabilities;
+    private Set<String> validPoliticalGeocodingLevels;
+    private Set<String> validContributors;
+    private Set<String> validAccrualFrequencies;
 
-    static Collection<Resource> getDistributionsForDataset(Resource dataset) {
-        Set<Resource> result = new HashSet<>();
-        StmtIterator it = dataset.listProperties(ResourceFactory.createProperty("http://www.w3.org/ns/dcat#distribution"));
+    static Collection<Resource> listDistributionsForDataset(Resource dataset) {
+        final Set<Resource> result = new HashSet<>();
+        final StmtIterator it = dataset.listProperties(ResourceFactory.createProperty("http://www.w3.org/ns/dcat#distribution"));
         while (it.hasNext()) {
-            Statement next = it.next();
-            Resource distribution = next.getObject().asResource();
+            final Statement next = it.next();
+            final Resource distribution = next.getObject().asResource();
             result.add(distribution);
         }
 
@@ -99,16 +97,17 @@ public class DcatStatistics {
 
     private void work() throws IOException {
 
-        validFileTypes = readVocabulary(URL_FILE_TYPES);
-        validLanguages = readVocabulary(URL_LANGUAGES);
+        validFileTypes = readVocabulary("http://publications.europa.eu/resource/authority/file-type");
+        validLanguages = readVocabulary("http://publications.europa.eu/resource/authority/language");
+        validAccrualFrequencies = readVocabulary("http://publications.europa.eu/resource/authority/frequency");
         validLicenses = readVocabulary("https://www.dcat-ap.de/def/licenses/20200715.rdf");
         validPlannedAvailabilities = readVocabulary("https://www.dcat-ap.de/def/plannedAvailability/1_0.rdf");
         validPoliticalGeocodingLevels = readVocabulary("https://www.dcat-ap.de/def/politicalGeocoding/Level/1_0.rdf");
         validContributors = readVocabulary("https://www.dcat-ap.de/def/contributors/20190531.rdf");
 
-        Model model = ModelFactory.createDefaultModel();
-        File dir = new File("target/");
-        File[] files = dir.listFiles((file, name) -> name.endsWith(".ttl"));
+        final Model model = ModelFactory.createDefaultModel();
+        final File dir = new File("target/");
+        final File[] files = dir.listFiles((file, name) -> name.endsWith(".ttl"));
         if (files != null) {
             for (File file : ProgressBar.wrap(Arrays.asList(files), "Reading RDF docments")) {
                 try {
@@ -132,7 +131,7 @@ public class DcatStatistics {
 
         while (it.hasNext()) {
             Resource dataset = it.next();
-            processDataset(dataset);
+            workOnDataset(dataset);
         }
 
         PrintStream out = new PrintStream(new FileOutputStream("/tmp/govdata-statistics.csv"));
@@ -148,21 +147,73 @@ public class DcatStatistics {
 
     }
 
+    /**
+     * Check if the specified property is used for a specified dataset.
+     */
     void checkDatasetProperty(Statistics statistics, Resource dataset, Property property) {
         if (dataset.hasProperty(property)) {
-            statistics.incrementDatasetInformation(property);
-            global.incrementDatasetInformation(property);
+            final boolean isLiteral = isLiteralValue(dataset, property);
+            statistics.incrementDatasetInformation(property, isLiteral, false);
+            global.incrementDatasetInformation(property, isLiteral, false);
         }
     }
 
+    /**
+     * Check if the specified property is used for the specified dataset and uses one of the values from the vocabulary.
+     */
+    void checkDatasetProperty(Statistics statistics, Resource dataset, Property property, Set<String> validVocabulary) {
+        if (dataset.hasProperty(property)) {
+            final boolean isLiteral = isLiteralValue(dataset, property);
+            final boolean isInvalid = !validVocabulary.contains(getPropertyValue(dataset, property));
+
+            statistics.incrementDatasetInformation(property, isLiteral, isInvalid);
+            global.incrementDatasetInformation(property, isLiteral, isInvalid);
+
+        }
+    }
+
+
+    public boolean isLiteralValue(Resource resource, Property property) {
+        if (!resource.hasProperty(property)) return false;
+        return resource.getProperty(property).getObject().isLiteral();
+    }
+
+    public String getPropertyValue(Resource resource, Property property) {
+        if (!resource.hasProperty(property)) return null;
+        final Statement statement = resource.getProperty(property);
+        if (statement.getObject().isLiteral()) {
+            return statement.getObject().asLiteral().getString();
+        }
+        if (statement.getObject().isResource()) {
+            return statement.getObject().asResource().getURI();
+        }
+        throw new RuntimeException("Unkonwn property value " + statement.getObject());
+    }
+
+    /**
+     * Check if the specified property is used for the specified dataset and uses one of the values from the vocabulary.
+     */
+    void checkDistributionProperty(Statistics statistics, Resource distribution, Property property, Set<String> validVocabulary) {
+        if (distribution.hasProperty(property)) {
+            final boolean isLiteral = isLiteralValue(distribution, property);
+            final boolean isInvalid = !validVocabulary.contains(getPropertyValue(distribution, property));
+            statistics.incrementDistributionInformation(property, isLiteral, isInvalid);
+            global.incrementDistributionInformation(property, isLiteral, isInvalid);
+        }
+    }
+
+    /**
+     * Check if the specified property is used for the specified dataset.
+     */
     void checkDistributionProperty(Statistics statistics, Resource distribution, Property property) {
         if (distribution.hasProperty(property)) {
-            statistics.incrementDistributionInformation(property);
-            global.incrementDistributionInformation(property);
+            final boolean isLiteral = isLiteralValue(distribution, property);
+            statistics.incrementDistributionInformation(property, isLiteral, false);
+            global.incrementDistributionInformation(property, isLiteral, false);
         }
     }
 
-    private void processDataset(Resource dataset) {
+    private void workOnDataset(Resource dataset) {
         final String contributor = workOnContributorId(dataset);
 
         if (!statisticsPerContributor.containsKey(contributor)) {
@@ -174,19 +225,24 @@ public class DcatStatistics {
         global.numberOfDatasets++;
 
         workOnIdentifier(dataset, statistics);
-        checkDatasetProperty(statistics, dataset, DCTerms.publisher);
-        checkDatasetProperty(statistics, dataset, DCTerms.contributor);
-        checkDatasetProperty(statistics, dataset, DCTerms.creator);
         checkDatasetProperty(statistics, dataset, DCATAPde.maintainer);
         checkDatasetProperty(statistics, dataset, DCATAPde.originator);
-        checkDatasetProperty(statistics, dataset, DCAT.contactPoint);
-        checkDatasetProperty(statistics, dataset, DCATAPde.politicalGeocodingLevelURI);
+        checkDatasetProperty(statistics, dataset, DCATAPde.plannedAvailability, validPlannedAvailabilities);
+        checkDatasetProperty(statistics, dataset, DCATAPde.politicalGeocodingLevelURI, validPoliticalGeocodingLevels);
         checkDatasetProperty(statistics, dataset, DCATAPde.politicalGeocodingURI);
-        checkDatasetProperty(statistics, dataset, DCTerms.accrualPeriodicity);
-        checkDatasetProperty(statistics, dataset, DCTerms.source);
+        checkDatasetProperty(statistics, dataset, DCAT.contactPoint);
+        checkDatasetProperty(statistics, dataset, DCAT.landingPage);
+        checkDatasetProperty(statistics, dataset, DCTerms.accrualPeriodicity, validAccrualFrequencies);
+        checkDatasetProperty(statistics, dataset, DCTerms.contributor);
+        checkDatasetProperty(statistics, dataset, DCTerms.creator);
+        checkDatasetProperty(statistics, dataset, DCTerms.language, validLanguages);
         checkDatasetProperty(statistics, dataset, DCTerms.provenance);
+        checkDatasetProperty(statistics, dataset, DCTerms.publisher);
+        checkDatasetProperty(statistics, dataset, DCTerms.source);
+        checkDatasetProperty(statistics, dataset, DCTerms.spatial);
+        checkDatasetProperty(statistics, dataset, DCTerms.temporal);
 
-        final Collection<Resource> distributions = getDistributionsForDataset(dataset);
+        final Collection<Resource> distributions = listDistributionsForDataset(dataset);
 
         for (final Resource distribution : distributions) {
             statistics.numberOfDistributions++;
@@ -194,6 +250,11 @@ public class DcatStatistics {
 
             workOnFormat(distribution, statistics, contributor);
             workOnDistributionLicense(distribution, statistics);
+            checkDistributionProperty(statistics, distribution, DCAT.accessURL);
+            checkDistributionProperty(statistics, distribution, DCAT.downloadURL);
+            checkDistributionProperty(statistics, distribution, DCAT.mediaType);
+            checkDistributionProperty(statistics, distribution, DCTerms.conformsTo);
+
         }
     }
 
@@ -214,7 +275,7 @@ public class DcatStatistics {
             global.distributionWithoutLicense++;
         } else if (licenseIds.size() == 1) {
             final String licenseId = licenseIds.iterator().next();
-            if (!licenseId.startsWith(DCAT_AP_DE_DEF_LICENSES)) {
+            if (!validLicenses.contains(licenseId)) {
                 log.info("Distribution {} has invalid license id {}", distribution.getURI(), licenseId);
                 statistics.distributionWithoutLicense++;
                 global.distributionWithoutLicense++;
@@ -290,7 +351,7 @@ public class DcatStatistics {
             global.datasetWithoutContributor++;
         } else if (contributorIds.size() == 1) {
             final String contributorId = contributorIds.iterator().next();
-            if (  validContributors.contains( contributorId)) {
+            if (validContributors.contains(contributorId)) {
                 result = StringUtils.substringAfter(contributorId, DCAT_AP_DE_DEF_CONTRIBUTORS);
             } else {
                 log.info("Dataset {} has invalid contributor id {}", datasetId, contributorId);
@@ -312,27 +373,39 @@ public class DcatStatistics {
         return result;
     }
 
+
     private static class Statistics {
+        private final Map<Property, Integer> datasetProperties = new HashMap<>();
+        private final Map<Property, Integer> distributionProperties = new HashMap<>();
+        private final Map<Property, Integer> datasetPropertiesLiteral = new HashMap<>();
+        private final Map<Property, Integer> distributionPropertiesLiteral = new HashMap<>();
+        private final Map<Property, Integer> datasetPropertiesInvalid = new HashMap<>();
+        private final Map<Property, Integer> distributionPropertiesInvalid = new HashMap<>();
         public int formatMissing;
+        Set<String> formats = new TreeSet<>();
         int formatAsResource = 0;
         int formatAsLiteral = 0;
         int numberOfDistributions = 0;
         int datasetWithoutContributor = 0;
         int noIdentifier = 0;
         int identifierIsURI = 0;
-        Set<String> formats = new TreeSet<>();
         int distributionWithoutLicense = 0;
         int numberOfDatasets = 0;
 
-        Map<Property, Integer> datasetInformation = new HashMap<>();
-        Map<Property, Integer> distributionInformation = new HashMap<>();
-
-        void incrementDatasetInformation(Property property) {
-            datasetInformation.put(property, datasetInformation.getOrDefault(property, 0) + 1);
+        void incrementDatasetInformation(Property property, boolean isLiteral, boolean isInvalid) {
+            datasetProperties.put(property, datasetProperties.getOrDefault(property, 0) + 1);
+            if (isInvalid)
+                datasetPropertiesInvalid.put(property, datasetPropertiesInvalid.getOrDefault(property, 0) + 1);
+            if (isLiteral)
+                datasetPropertiesLiteral.put(property, datasetPropertiesLiteral.getOrDefault(property, 0) + 1);
         }
 
-        void incrementDistributionInformation(Property property) {
-            distributionInformation.put(property, distributionInformation.getOrDefault(property, 0) + 1);
+        void incrementDistributionInformation(Property property, boolean isLiteral, boolean isInvalid) {
+            distributionProperties.put(property, distributionProperties.getOrDefault(property, 0) + 1);
+            if (isInvalid)
+                distributionPropertiesInvalid.put(property, distributionPropertiesInvalid.getOrDefault(property, 0) + 1);
+            if (isLiteral)
+                distributionPropertiesLiteral.put(property, distributionPropertiesLiteral.getOrDefault(property, 0) + 1);
         }
 
         void writeHeader(PrintStream out) {
@@ -342,15 +415,27 @@ public class DcatStatistics {
                     "Datasets without identifier (bad)\t" +
                     "Datasets with URI identifier (good)\t");
 
-            for (Property p : datasetInformation.keySet()) {
+            for (Property p : datasetProperties.keySet()) {
                 out.print("DS with ");
+                out.print(p.getLocalName());
+                out.print('\t');
+                out.print("DS with literal ");
+                out.print(p.getLocalName());
+                out.print('\t');
+                out.print("DS with invalid ");
                 out.print(p.getLocalName());
                 out.print('\t');
             }
 
             out.print("Number of Distributions\t");
-            for (Property p : distributionInformation.keySet()) {
+            for (Property p : distributionProperties.keySet()) {
                 out.print("Dist with ");
+                out.print(p.getLocalName());
+                out.print('\t');
+                out.print("Dist with literal ");
+                out.print(p.getLocalName());
+                out.print('\t');
+                out.print("Dist with invalid ");
                 out.print(p.getLocalName());
                 out.print('\t');
             }
@@ -362,7 +447,7 @@ public class DcatStatistics {
         }
 
         /**
-         * @param global      The global statistics are needed to get all header names.
+         * @param global    The global statistics are needed to get all header names.
          * @param contributor
          * @param out
          */
@@ -378,16 +463,24 @@ public class DcatStatistics {
             out.print(identifierIsURI);
             out.print('\t');
 
-            for (Property p : global.datasetInformation.keySet()) {
-                out.print(datasetInformation.getOrDefault(p, 0));
+            for (Property p : global.datasetProperties.keySet()) {
+                out.print(datasetProperties.getOrDefault(p, 0));
+                out.print('\t');
+                out.print(datasetPropertiesLiteral.getOrDefault(p, 0));
+                out.print('\t');
+                out.print(datasetPropertiesInvalid.getOrDefault(p, 0));
                 out.print('\t');
             }
 
             out.print(numberOfDistributions);
             out.print('\t');
 
-            for (Property p : global.distributionInformation.keySet()) {
-                out.print(distributionInformation.getOrDefault(p, 0));
+            for (Property p : global.distributionProperties.keySet()) {
+                out.print(distributionProperties.getOrDefault(p, 0));
+                out.print('\t');
+                out.print(distributionPropertiesLiteral.getOrDefault(p, 0));
+                out.print('\t');
+                out.print(distributionPropertiesInvalid.getOrDefault(p, 0));
                 out.print('\t');
             }
 
@@ -401,4 +494,6 @@ public class DcatStatistics {
             out.println();
         }
     }
+
 }
+
