@@ -134,7 +134,7 @@ public class DcatStatistics {
             workOnDataset(dataset);
         }
 
-        PrintStream out = new PrintStream(new FileOutputStream("/tmp/govdata-statistics.csv"));
+        PrintStream out = new PrintStream(new FileOutputStream("target/govdata-statistics.csv"));
         global.writeHeader(out);
         global.writeStatistics(global, "ALL", out);
 
