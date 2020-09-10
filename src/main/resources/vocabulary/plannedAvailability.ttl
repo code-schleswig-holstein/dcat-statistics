@@ -1,0 +1,69 @@
+@prefix :      <http://dcat-ap.de/def/plannedAvailability> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos-xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://dcat-ap.de/def/plannedAvailability/temporary>
+        a                  skos:Concept ;
+        dc:identifier      "temporary" ;
+        skos:exactMatch    <http://dcat-ap.de/def/plannedAvailability/temporary> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Daten können jederzeit verschwinden."@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Daten können jederzeit verschwinden."@de ;
+                             skos-xl:literalForm  "Daten können jederzeit verschwinden."@de
+                           ] .
+
+<http://dcat-ap.de/def/plannedAvailability/experimental>
+        a                  skos:Concept ;
+        dc:identifier      "experimental" ;
+        skos:exactMatch    <http://dcat-ap.de/def/plannedAvailability/experimental> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Daten versuchsweise verfügbar, sind aber noch etwa ein Jahr erreichbar."@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Daten versuchsweise verfügbar, sind aber noch etwa ein Jahr erreichbar."@de ;
+                             skos-xl:literalForm  "Daten versuchsweise verfügbar, sind aber noch etwa ein Jahr erreichbar."@de
+                           ] .
+
+:       a                skos:ConceptScheme , owl:Ontology ;
+        rdfs:comment     "Diese Verfügbarkeitsgrade geben an, wie lange geplant ist das Dokument verfügbar zu halten."^^rdfs:Literal ;
+        rdfs:label       "Liste geplanter Verfügbarkeitsgrade"@de ;
+        dct:identifier   "http://www.dcat-ap.de/def/plannedAvailability" ;
+        owl:versionIRI   <http://dcat-ap.de/def/plannedAvailability/1.0/> ;
+        owl:versionInfo  "1.0" ;
+        skos:prefLabel   "Liste geplanter Verfügbarkeitsgrade"@de .
+
+<http://dcat-ap.de/def/plannedAvailability/available>
+        a                  skos:Concept ;
+        dc:identifier      "available" ;
+        skos:exactMatch    <http://dcat-ap.de/def/plannedAvailability/available> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Daten sind für einige Jahre verfügbar, mittelfristige Planung"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Daten sind für einige Jahre verfügbar, mittelfristige Planung"@de ;
+                             skos-xl:literalForm  "Daten sind für einige Jahre verfügbar, mittelfristige Planung"@de
+                           ] .
+
+<http://dcat-ap.de/def/plannedAvailability/stable>
+        a                  skos:Concept ;
+        dc:identifier      "stable" ;
+        skos:exactMatch    <http://dcat-ap.de/def/plannedAvailability/stable> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Daten werden langfristig erhältlich bleiben."@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Daten werden langfristig erhältlich bleiben."@de ;
+                             skos-xl:literalForm  "Daten werden langfristig erhältlich bleiben."@de
+                           ] .

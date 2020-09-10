@@ -15,7 +15,7 @@ public class DCATAPde {
     public static final Property politicalGeocodingURI ;
     public static final Property plannedAvailability ;
 
-    public DCATAPde() {
+    private DCATAPde() {
     }
 
     public static String getURI() {
