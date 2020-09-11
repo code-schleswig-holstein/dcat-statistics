@@ -1,0 +1,34 @@
+@prefix :      <http://dcat-ap.de/def/datasetTypes> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos-xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+:       a                skos:ConceptScheme , owl:Ontology ;
+        rdfs:comment     "Über das Feld dct:type in der Klasse dcat:dataset kann das Vorhandensein einer Reihe gekennzeichnet werden. Dazu MUSS dct:type den Wert http://dcat-ap.de/def/datasetTypes/collection erhalten. Weitere Datenstrukturtypen sind nicht vorgesehen."^^rdfs:Literal ;
+        rdfs:label       "Liste der Datenstrukturtypen"@de ;
+        dct:identifier   "http://www.dcat-ap.de/def/datasetTypes" ;
+        owl:versionIRI   <http://dcat-ap.de/def/datasetTypes/1.0/> ;
+        owl:versionInfo  "1.0" ;
+        skos:prefLabel   "Liste der Datenstrukturtypen"@de .
+
+<http://dcat-ap.de/def/datasetTypes/collection>
+        a                  skos:Concept ;
+        dc:identifier      "collection" ;
+        skos:altLabel      "Zeitreihen und sonstige linear und nicht linear angeordnete Elemente einer Reihe als Kollektionen von Datenstrukturen."@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/datasetTypes/collection> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Datenreihe"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Datenreihe"@de ;
+                             skos-xl:literalForm  "Datenreihe"@de
+                           ] .

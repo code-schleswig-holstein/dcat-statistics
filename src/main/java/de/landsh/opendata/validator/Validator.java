@@ -3,16 +3,12 @@ package de.landsh.opendata.validator;
 import de.landsh.opendata.Adms;
 import de.landsh.opendata.SPDX;
 import org.apache.jena.rdf.model.*;
-import org.apache.jena.riot.RDFLanguages;
-import org.apache.jena.riot.RDFParser;
-import org.apache.jena.riot.system.ErrorHandlerFactory;
 import org.apache.jena.sparql.vocabulary.FOAF;
 import org.apache.jena.vocabulary.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashSet;
@@ -26,13 +22,14 @@ public class Validator {
     private Model model = ModelFactory.createDefaultModel();
 
     public static void main(String[] args) throws IOException {
-        if (args.length < 1 || !new File(args[0]).exists()) {
+        if (args.length < 1 ) {
             System.out.println("USAGE: java Validator <catalog.ttl>");
             System.exit(2);
         }
 
         final Validator validator = new Validator();
-        boolean isValid = validator.validate(new FileInputStream(new File(args[0])));
+        validator.parseModel(args[0]);
+        boolean isValid = validator.validate();
 
         if (isValid) {
             System.out.println("Catalog is valid.");
@@ -72,12 +69,7 @@ public class Validator {
             is = getClass().getResourceAsStream(resourceName);
         }
 
-        RDFParser.create()
-                .source(is)
-                .lang(RDFLanguages.TTL)
-                .errorHandler(ErrorHandlerFactory.errorHandlerNoWarnings(log))
-                .base("http://open/data")
-                .parse(model);
+        model.read(is, null, "TURTLE");
     }
 
     public void reset() {
@@ -85,7 +77,15 @@ public class Validator {
         validationResults.clear();
     }
 
-    public boolean validate(InputStream is) throws IOException {
+    public void parseModel(String file) {
+        model.read(file);
+    }
+
+    public void parseModel(InputStream is, String format) {
+        model.read(is, null, format);
+    }
+
+    public boolean validate() throws IOException {
 
         addExternalVocabulary("/vocabulary/contributors.ttl.gz");
         addExternalVocabulary("/vocabulary/data-theme.ttl.gz");
@@ -95,13 +95,7 @@ public class Validator {
         addExternalVocabulary("/vocabulary/licenses.ttl.gz");
         addExternalVocabulary("/vocabulary/plannedAvailability.ttl");
         addExternalVocabulary("/vocabulary/politicalGeocodingLevel.ttl");
-
-        RDFParser.create()
-                .source(is)
-                .lang(RDFLanguages.TTL)
-                .errorHandler(ErrorHandlerFactory.errorHandlerNoWarnings(log))
-                .base("http://example.org")
-                .parse(model);
+        addExternalVocabulary("/vocabulary/datasetTypes.ttl");
 
         ResIterator it = model.listSubjectsWithProperty(RDF.type, DCAT.Catalog);
         while (it.hasNext()) {
@@ -182,7 +176,7 @@ public class Validator {
         linkedResourceMustHaveType(dataset, DCTerms.provenance, DCTerms.ProvenanceStatement);
 
         maxCount1(dataset, DCTerms.publisher);
-        linkedResourceMustHaveType(dataset, DCTerms.publisher, FOAF.Agent);
+        linkedResourceMustHaveType(dataset, DCTerms.publisher, FOAF.Agent, FOAF.Person, FOAF.Group, FOAF.Organization);
         nodeKindIRI(dataset, DCTerms.publisher);
 
         nodeKindIRI(dataset, DCTerms.relation);
@@ -210,7 +204,7 @@ public class Validator {
 
         linkedResourceMustHaveType(dataset, Adms.sample, DCAT.Distribution);
 
-        linkedResourceMustHaveType(dataset, DCAT.contactPoint, VCARD4.Kind);
+        linkedResourceMustHaveType(dataset, DCAT.contactPoint, VCARD4.Kind,  VCARD4.Group,  VCARD4.Individual, VCARD4.Organization, VCARD4.Location);
 
         linkedResourceMustHaveType(dataset, DCAT.distribution, DCAT.Distribution);
 
@@ -225,8 +219,8 @@ public class Validator {
         nodeKindLiteral(resource, property);
         final StmtIterator it = resource.listProperties(property);
         while (it.hasNext()) {
-            Statement statement = it.next();
-            if (!datatype.equals(statement.getObject().asLiteral().getDatatype())) {
+            final Statement statement = it.next();
+            if (!datatype.getURI().equals(statement.getObject().asLiteral().getDatatypeURI())) {
                 validationResults.add(new Violation(resource, property.getLocalName() + " must be a literal of type " + datatype.getURI()));
             }
         }
@@ -235,7 +229,7 @@ public class Validator {
     public void validateDistribution(Resource distribution) {
         nodeKindBlankNodeOrIRI(distribution, DCTerms.conformsTo);
 
-        nodeKindIRI(distribution, DCTerms.description);
+        nodeKindLiteral(distribution, DCTerms.description);
 
         maxCount1(distribution, DCTerms.format);
         linkedResourceMustHaveType(distribution, DCTerms.format, DCTerms.MediaTypeOrExtent);
@@ -352,7 +346,7 @@ public class Validator {
         while (it.hasNext()) {
             final Statement statement = it.next();
             if (!statement.getObject().isLiteral()) {
-                validationResults.add(new Violation(resource, property.getLocalName() + " must not link to an anonymous resource"));
+                validationResults.add(new Violation(resource, property.getLocalName() + " must be a literal"));
             }
         }
     }
@@ -397,6 +391,29 @@ public class Validator {
 
             if (!hasCorrectType) {
                 validationResults.add(new Violation(resource, property.getLocalName() + " must only link to an instance of " + type.getURI()));
+            }
+        }
+    }
+
+
+    /**
+     * All occurrences of this properties must link to another resource with one of the specified types.
+     */
+    void linkedResourceMustHaveType(Resource resource, Property property, Resource... types) {
+        final StmtIterator it = resource.listProperties(property);
+        while (it.hasNext()) {
+            final Statement statement = it.next();
+
+            boolean hasCorrectType = false;
+            if (statement.getObject().isResource()) {
+                final Resource object = statement.getObject().asResource();
+                for (Resource type : types) {
+                    hasCorrectType |= hasType(object, type);
+                }
+            }
+
+            if (!hasCorrectType) {
+                validationResults.add(new Violation(resource, property.getLocalName() + " must only link to an instance of " + types));
             }
         }
     }

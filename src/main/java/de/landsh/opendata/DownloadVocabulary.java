@@ -55,6 +55,10 @@ public class DownloadVocabulary {
         self = new DownloadVocabulary();
         self.download("https://www.dcat-ap.de/def/contributors/20200728.rdf", false);
         self.save("target/contributors.ttl");
+
+        self = new DownloadVocabulary();
+        self.download("https://www.dcat-ap.de/def/datasetTypes/1_0.rdf", false);
+        self.save("target/datasetTypes.ttl");
     }
 
     private void save(String targetFileName) throws IOException {

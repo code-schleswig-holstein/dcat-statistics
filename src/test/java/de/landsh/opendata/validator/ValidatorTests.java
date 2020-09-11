@@ -19,12 +19,14 @@ import static org.junit.Assert.assertTrue;
 
 public class ValidatorTests {
 
+    public static final String TURTLE = "TURTLE";
     private final Validator validator = new Validator();
 
     @Test
     public void validate_Catalogue() throws IOException {
         final InputStream is = getClass().getResourceAsStream("/catalogue.ttl");
-        boolean result = validator.validate(is);
+        validator.parseModel(is, TURTLE);
+        boolean result = validator.validate();
 
         Assert.assertFalse(result);
 
@@ -41,7 +43,8 @@ public class ValidatorTests {
     @Test
     public void validate_Catalogue1() throws IOException {
         final InputStream is = getClass().getResourceAsStream("/catalogue-1.ttl");
-        boolean result = validator.validate(is);
+        validator.parseModel(is, TURTLE);
+        boolean result = validator.validate();
 
         Assert.assertFalse(result);
         final Set<String> messages = validator.validationResults.stream().map(ValidationResult::getMessage).collect(Collectors.toSet());
@@ -71,7 +74,8 @@ public class ValidatorTests {
     @Test
     public void validate_DatatypeDisjunction() throws IOException {
         final InputStream is = getClass().getResourceAsStream("/datatype-disjunction.ttl");
-        boolean result = validator.validate(is);
+        validator.parseModel(is, TURTLE);
+        boolean result = validator.validate();
 
         Assert.assertFalse(result);
         final Set<String> messages = validator.validationResults.stream().map(ValidationResult::getMessage).collect(Collectors.toSet());
@@ -85,7 +89,8 @@ public class ValidatorTests {
     @Test
     public void validate_CatalogueOptional() throws IOException {
         final InputStream is = getClass().getResourceAsStream("/catalogue-optional.ttl");
-        boolean result = validator.validate(is);
+        validator.parseModel(is, TURTLE);
+        boolean result = validator.validate();
 
         Assert.assertFalse(result);
         final Set<String> messages = validator.validationResults.stream().map(ValidationResult::getMessage).collect(Collectors.toSet());
