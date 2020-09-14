@@ -1,6 +1,6 @@
 # DCAT-AP.de Statistiken
 
-Dieses Programm berechnet aus dem Datenbestand von GovData eine Übersicht, welche Elemente von DCAT-AP.de momentan verwendet werden.
+Dieses Programm berechnet aus dem Datenbestand von [GovData](https://www.govdata.de/) eine Übersicht, welche Elemente von [DCAT-AP.de](https://www.dcat-ap.de/) momentan verwendet werden.
 
 Man muss es in zwei Schritten ausführen:
 
