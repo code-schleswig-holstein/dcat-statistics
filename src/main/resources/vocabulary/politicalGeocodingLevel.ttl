@@ -1,0 +1,93 @@
+@prefix :      <http://dcat-ap.de/def/politicalGeocoding/Level> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos-xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://dcat-ap.de/def/politicalGeocoding/Level/administrativeDistrict>
+        a                  skos:Concept ;
+        dc:identifier      "administrativeDistrict" ;
+        skos:exactMatch    <http://dcat-ap.de/def/politicalGeocoding/Level/administrativeDistrict> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Ebene der Landkreise und Regierungsbezirke"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Ebene der Landkreise und Regierungsbezirke"@de ;
+                             skos-xl:literalForm  "Ebene der Landkreise und Regierungsbezirke"@de
+                           ] .
+
+<http://dcat-ap.de/def/politicalGeocoding/Level/international>
+        a                  skos:Concept ;
+        dc:identifier      "international" ;
+        skos:exactMatch    <http://dcat-ap.de/def/politicalGeocoding/Level/international> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "internationale Ebene"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "internationale Ebene"@de ;
+                             skos-xl:literalForm  "internationale Ebene"@de
+                           ] .
+
+<http://dcat-ap.de/def/politicalGeocoding/Level/state>
+        a                  skos:Concept ;
+        dc:identifier      "state" ;
+        skos:exactMatch    <http://dcat-ap.de/def/politicalGeocoding/Level/state> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Ebene der Bundesländer"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Ebene der Bundesländer"@de ;
+                             skos-xl:literalForm  "Ebene der Bundesländer"@de
+                           ] .
+
+<http://dcat-ap.de/def/politicalGeocoding/Level/federal>
+        a                  skos:Concept ;
+        dc:identifier      "federal" ;
+        skos:exactMatch    <http://dcat-ap.de/def/politicalGeocoding/Level/federal> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesebene"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesebene"@de ;
+                             skos-xl:literalForm  "Bundesebene"@de
+                           ] .
+
+:       a                skos:ConceptScheme , owl:Ontology ;
+        rdfs:comment     "Zur kodierten Angabe der jeweiligen prinzipiellen Verwaltungsebene, von der die Datenstruktur erhoben und eingestellt wurde, sind folgende sechs Optionen mit Mehrfachauswahl möglich:"^^rdfs:Literal ;
+        rdfs:label       "Liste der geopolitischen Verwaltungscodierung"@de ;
+        dct:identifier   "http://www.dcat-ap.de/def/politicalGeocoding/Level" ;
+        owl:versionIRI   <http://dcat-ap.de/def/politicalGeocoding/Level/1.0/> ;
+        owl:versionInfo  "1.0" ;
+        skos:prefLabel   "Liste der geopolitischen Verwaltungscodierung"@de .
+
+<http://dcat-ap.de/def/politicalGeocoding/Level/european>
+        a                  skos:Concept ;
+        dc:identifier      "european" ;
+        skos:exactMatch    <http://dcat-ap.de/def/politicalGeocoding/Level/european> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "EU-Ebene"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "EU-Ebene"@de ;
+                             skos-xl:literalForm  "EU-Ebene"@de
+                           ] .
+
+<http://dcat-ap.de/def/politicalGeocoding/Level/municipality>
+        a                  skos:Concept ;
+        dc:identifier      "municipality" ;
+        skos:exactMatch    <http://dcat-ap.de/def/politicalGeocoding/Level/municipality> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "kommunale Ebene"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "kommunale Ebene"@de ;
+                             skos-xl:literalForm  "kommunale Ebene"@de
+                           ] .

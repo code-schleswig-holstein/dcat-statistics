@@ -19,6 +19,15 @@
                     <target>8</target>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>exec-maven-plugin</artifactId>
+                <version>1.2</version>
+                <configuration>
+                    <mainClass>de.landsh.opendata.validator.Validator</mainClass>
+                    <classpathScope>runtime</classpathScope>
+                </configuration>
+            </plugin>
         </plugins>
     </build>
 
