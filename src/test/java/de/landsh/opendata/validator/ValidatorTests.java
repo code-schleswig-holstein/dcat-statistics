@@ -100,7 +100,24 @@ public class ValidatorTests {
         assertTrue(messages.contains("must have at least one title"));
         assertTrue(messages.contains("must have at least one publisher"));
         assertTrue(messages.contains("must have at least one description"));
-
     }
 
+    @Test
+    public void validate_dcat_ap_de_RefImp_TTL_SIMPLE_v11() throws IOException {
+        final InputStream is = getClass().getResourceAsStream("/dcat_ap_de-RefImp_TTL_SIMPLE_V1.1.ttl");
+        validator.parseModel(is, TURTLE);
+        boolean result = validator.validate();
+
+        Assert.assertTrue(result);
+        assertTrue(validator.validationResults.isEmpty());
+    }
+
+    public void validate_dcat_ap_de_RefImp_TTL_ADVANCED_v11() throws IOException {
+        final InputStream is = getClass().getResourceAsStream("/dcat_ap_de-RefImp_TTL_ADVANCED_V1.1.ttl");
+        validator.parseModel(is, TURTLE);
+        boolean result = validator.validate();
+
+        Assert.assertTrue(result);
+        assertTrue(validator.validationResults.isEmpty());
+    }
 }
