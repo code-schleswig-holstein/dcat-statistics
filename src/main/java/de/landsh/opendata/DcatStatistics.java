@@ -241,6 +241,10 @@ public class DcatStatistics {
         checkDatasetProperty(statistics, dataset, DCTerms.source);
         checkDatasetProperty(statistics, dataset, DCTerms.spatial);
         checkDatasetProperty(statistics, dataset, DCTerms.temporal);
+        checkDatasetProperty(statistics, dataset, DCTerms.issued);
+        checkDatasetProperty(statistics, dataset, DCTerms.modified);
+        checkDatasetProperty(statistics, dataset, DCAT.theme);
+        checkDatasetProperty(statistics, dataset, DCAT.keyword);
 
         final Collection<Resource> distributions = listDistributionsForDataset(dataset);
 
@@ -254,7 +258,10 @@ public class DcatStatistics {
             checkDistributionProperty(statistics, distribution, DCAT.downloadURL);
             checkDistributionProperty(statistics, distribution, DCAT.mediaType);
             checkDistributionProperty(statistics, distribution, DCTerms.conformsTo);
-
+            checkDistributionProperty(statistics, distribution, DCTerms.issued);
+            checkDistributionProperty(statistics, distribution, DCTerms.rights);
+            checkDistributionProperty(statistics, distribution, DCAT.byteSize);
+            checkDistributionProperty(statistics, distribution, SPDX.checksum);
         }
     }
 
