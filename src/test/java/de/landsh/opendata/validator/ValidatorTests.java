@@ -20,6 +20,7 @@ import static org.junit.Assert.assertTrue;
 public class ValidatorTests {
 
     public static final String TURTLE = "TURTLE";
+    public static final String XML = "RDF/XML";
     private final Validator validator = new Validator();
 
     @Test
@@ -112,12 +113,32 @@ public class ValidatorTests {
         assertTrue(validator.validationResults.isEmpty());
     }
 
+    @Test
     public void validate_dcat_ap_de_RefImp_TTL_ADVANCED_v11() throws IOException {
         final InputStream is = getClass().getResourceAsStream("/dcat_ap_de-RefImp_TTL_ADVANCED_V1.1.ttl");
         validator.parseModel(is, TURTLE);
         boolean result = validator.validate();
 
+        for (ValidationResult validationResult : validator.validationResults) {
+            System.out.println(validationResult.getMessage());
+        }
+
         Assert.assertTrue(result);
         assertTrue(validator.validationResults.isEmpty());
     }
+
+    @Test
+    public void validate_data_gov_be() throws IOException {
+        final InputStream is = getClass().getResourceAsStream("/data_gov_be.xml");
+        validator.parseModel(is, XML);
+        boolean result = validator.validate();
+
+        for (ValidationResult validationResult : validator.validationResults) {
+            System.out.println(validationResult.getMessage());
+        }
+
+        Assert.assertTrue(result);
+        assertTrue(validator.validationResults.isEmpty());
+    }
+
 }

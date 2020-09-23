@@ -87,12 +87,12 @@ public class Validator {
 
     public boolean validate() throws IOException {
 
-        addExternalVocabulary("/vocabulary/contributors.ttl.gz");
-        addExternalVocabulary("/vocabulary/data-theme.ttl.gz");
-        addExternalVocabulary("/vocabulary/file-type.ttl.gz");
-        addExternalVocabulary("/vocabulary/frequency.ttl.gz");
-        addExternalVocabulary("/vocabulary/language.ttl.gz");
-        addExternalVocabulary("/vocabulary/licenses.ttl.gz");
+        addExternalVocabulary("/vocabulary/contributors.ttl");
+        addExternalVocabulary("/vocabulary/data-theme.ttl");
+        addExternalVocabulary("/vocabulary/file-type.ttl");
+        addExternalVocabulary("/vocabulary/frequency.ttl");
+        addExternalVocabulary("/vocabulary/language.ttl");
+        addExternalVocabulary("/vocabulary/licenses.ttl");
         addExternalVocabulary("/vocabulary/plannedAvailability.ttl");
         addExternalVocabulary("/vocabulary/politicalGeocodingLevel.ttl");
         addExternalVocabulary("/vocabulary/datasetTypes.ttl");

@@ -1,0 +1,606 @@
+@prefix :      <http://dcat-ap.de/def/contributors> .
+@prefix void:  <http://rdfs.org/ns/void#> .
+@prefix org:   <http://www.w3.org/ns/org#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos-xl: <http://www.w3.org/2008/05/skos-xl#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix dcat:  <http://www.w3.org/ns/dcat#> .
+@prefix foaf:  <http://xmlns.com/foaf/0.1/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://dcat-ap.de/def/contributors/gdiDE>
+        a                  skos:Concept ;
+        dc:identifier      "gdiDE" ;
+        skos:altLabel      "gdiDE"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/gdiDE> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Geodateninfrastruktur Deutschland"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Geodateninfrastruktur Deutschland"@de ;
+                             skos-xl:literalForm  "Geodateninfrastruktur Deutschland"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/destatis>
+        a                  skos:Concept ;
+        dc:identifier      "destatis" ;
+        skos:altLabel      "destatis"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/destatis> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Statistisches Bundesamt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Statistisches Bundesamt"@de ;
+                             skos-xl:literalForm  "Statistisches Bundesamt"@de
+                           ] .
+
+:       a                skos:ConceptScheme , owl:Ontology ;
+        rdfs:comment     "Folgend ist die Liste der unmittelbar an GovData anliefernden Systeme abgebildet. Diese Datenbereitsteller sind im engeren Sinne Metadatenbereitsteller, für den Bezug der eigentlichen Open Data Daten wird auf das „Originalportal“ verwiesen."^^rdfs:Literal ;
+        rdfs:label       "Liste der Datenbereitsteller"@de ;
+        dct:identifier   "http://www.dcat-ap.de/def/contributors" ;
+        owl:versionIRI   <http://dcat-ap.de/def/contributors/20200728/> ;
+        owl:versionInfo  "20200728" ;
+        skos:prefLabel   "Liste der Datenbereitsteller"@de .
+
+<http://dcat-ap.de/def/contributors/bundeszentralamtFuerSteuern>
+        a                  skos:Concept ;
+        dc:identifier      "bundeszentralamtFuerSteuern" ;
+        skos:altLabel      "bundeszentralamtFuerSteuern"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundeszentralamtFuerSteuern> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundeszentralamt für Steuern"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundeszentralamt für Steuern"@de ;
+                             skos-xl:literalForm  "Bundeszentralamt für Steuern"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesinstitutFuerBauStadtUndRaumforschungImBundesamtFuerBauwesenundRaumordnung>
+        a                  skos:Concept ;
+        dc:identifier      "bundesinstitutFuerBauStadtUndRaumforschungImBundesamtFuerBauwesenundRaumordnung" ;
+        skos:altLabel      "bundesinstitutFuerBauStadtUndRaumforschungImBundesamtFuerBauwesenundRaumordnung"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesinstitutFuerBauStadtUndRaumforschungImBundesamtFuerBauwesenundRaumordnung> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR) im Bundesamt für Bauwesen und Raumordnung (BBR)"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR) im Bundesamt für Bauwesen und Raumordnung (BBR)"@de ;
+                             skos-xl:literalForm  "Bundesinstitut für Bau-, Stadt- und Raumforschung (BBSR) im Bundesamt für Bauwesen und Raumordnung (BBR)"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumFuerWirtschaftlicheZusammenarbeitUndEntwicklung>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumFuerWirtschaftlicheZusammenarbeitUndEntwicklung" ;
+        skos:altLabel      "bundesminsteriumFuerWirtschaftlicheZusammenarbeitUndEntwicklung"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumFuerWirtschaftlicheZusammenarbeitUndEntwicklung> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"@de ;
+                             skos-xl:literalForm  "Bundesministerium für wirtschaftliche Zusammenarbeit und Entwicklung"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/deutschesPatentUndMarkenamt>
+        a                  skos:Concept ;
+        dc:identifier      "deutschesPatentUndMarkenamt" ;
+        skos:altLabel      "deutschesPatentUndMarkenamt"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/deutschesPatentUndMarkenamt> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Deutsches Patent- und Markenamt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Deutsches Patent- und Markenamt"@de ;
+                             skos-xl:literalForm  "Deutsches Patent- und Markenamt"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/landBrandenburg>
+        a                  skos:Concept ;
+        dc:identifier      "landBrandenburg" ;
+        skos:altLabel      "landBrandenburg"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/landBrandenburg> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Land Brandenburg"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Land Brandenburg"@de ;
+                             skos-xl:literalForm  "Land Brandenburg"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/openDataHRO>
+        a                  skos:Concept ;
+        dc:identifier      "openDataHRO" ;
+        skos:altLabel      "openDataHRO"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/openDataHRO> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Open-Data-Portal der Hanse- und Universitätsstadt Rostock"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Open-Data-Portal der Hanse- und Universitätsstadt Rostock"@de ;
+                             skos-xl:literalForm  "Open-Data-Portal der Hanse- und Universitätsstadt Rostock"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/maxRubnerInstitut>
+        a                  skos:Concept ;
+        dc:identifier      "maxRubnerInstitut" ;
+        skos:altLabel      "maxRubnerInstitut"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/maxRubnerInstitut> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Max Rubner Institut"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Max Rubner Institut"@de ;
+                             skos-xl:literalForm  "Max Rubner Institut"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesamtFuerMaterialforschungUndPruefung>
+        a                  skos:Concept ;
+        dc:identifier      "bundesamtFuerMaterialforschungUndPruefung" ;
+        skos:altLabel      "bundesamtFuerMaterialforschungUndPruefung"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesamtFuerMaterialforschungUndPruefung> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesamt für Materialforschung und -prüfung"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesamt für Materialforschung und -prüfung"@de ;
+                             skos-xl:literalForm  "Bundesamt für Materialforschung und -prüfung"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/dieBundesbeauftragteFuerDenDatenschutzUndDieInformationsfreiheit>
+        a                  skos:Concept ;
+        dc:identifier      "dieBundesbeauftragteFuerDenDatenschutzUndDieInformationsfreiheit" ;
+        skos:altLabel      "dieBundesbeauftragteFuerDenDatenschutzUndDieInformationsfreiheit"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/dieBundesbeauftragteFuerDenDatenschutzUndDieInformationsfreiheit> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit"@de ;
+                             skos-xl:literalForm  "Die Bundesbeauftragte für den Datenschutz und die Informationsfreiheit"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumDesInnernFuerBauUndHeimat>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumDesInnernFuerBauUndHeimat" ;
+        skos:altLabel      "bundesministeriumDesInnernFuerBauUndHeimat"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumDesInnernFuerBauUndHeimat> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium des Innern, für Bau und Heimat"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium des Innern, für Bau und Heimat"@de ;
+                             skos-xl:literalForm  "Bundesministerium des Innern, für Bau und Heimat"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/generalzolldirektion>
+        a                  skos:Concept ;
+        dc:identifier      "generalzolldirektion" ;
+        skos:altLabel      "generalzolldirektion"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/generalzolldirektion> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Generalzolldirektion"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Generalzolldirektion"@de ;
+                             skos-xl:literalForm  "Generalzolldirektion"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumFuerBildungUndForschung>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumFuerBildungUndForschung" ;
+        skos:altLabel      "bundesministeriumFuerBildungUndForschung"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumFuerBildungUndForschung> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium für Bildung und Forschung"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium für Bildung und Forschung"@de ;
+                             skos-xl:literalForm  "Bundesministerium für Bildung und Forschung"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumFuerArbeitUndSoziales>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumFuerArbeitUndSoziales" ;
+        skos:altLabel      "bundesministeriumFuerArbeitUndSoziales"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumFuerArbeitUndSoziales> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium für Arbeit und Soziales"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium für Arbeit und Soziales"@de ;
+                             skos-xl:literalForm  "Bundesministerium für Arbeit und Soziales"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumDerVerteidigung>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumDerVerteidigung" ;
+        skos:altLabel      "bundesministeriumDerVerteidigung"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumDerVerteidigung> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium der Verteidigung"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium der Verteidigung"@de ;
+                             skos-xl:literalForm  "Bundesministerium der Verteidigung"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/mCloud>
+        a                  skos:Concept ;
+        dc:identifier      "mCloud" ;
+        skos:altLabel      "mCloud"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/mCloud> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "mCloud"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "mCloud"@de ;
+                             skos-xl:literalForm  "mCloud"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/dieBeauftragteDerBundesregierungFuerKulturUndMedien>
+        a                  skos:Concept ;
+        dc:identifier      "dieBeauftragteDerBundesregierungFuerKulturUndMedien" ;
+        skos:altLabel      "dieBeauftragteDerBundesregierungFuerKulturUndMedien"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/dieBeauftragteDerBundesregierungFuerKulturUndMedien> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Die Beauftragte der Bundesregierung für Kultur und Medien"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Die Beauftragte der Bundesregierung für Kultur und Medien"@de ;
+                             skos-xl:literalForm  "Die Beauftragte der Bundesregierung für Kultur und Medien"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/berlinOpenData>
+        a                  skos:Concept ;
+        dc:identifier      "berlinOpenData" ;
+        skos:altLabel      "berlinOpenData"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/berlinOpenData> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Berlin Open Data"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Berlin Open Data"@de ;
+                             skos-xl:literalForm  "Berlin Open Data"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesversicherungsamt>
+        a                  skos:Concept ;
+        dc:identifier      "bundesversicherungsamt" ;
+        skos:altLabel      "bundesversicherungsamt"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesversicherungsamt> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesversicherungsamt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesversicherungsamt"@de ;
+                             skos-xl:literalForm  "Bundesversicherungsamt"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/regionalstatistik>
+        a                  skos:Concept ;
+        dc:identifier      "regionalstatistik" ;
+        skos:altLabel      "regionalstatistik"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/regionalstatistik> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Die Regionaldatenbank Deutschland"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Die Regionaldatenbank Deutschland"@de ;
+                             skos-xl:literalForm  "Die Regionaldatenbank Deutschland"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/friedrichLoefflerInstitut>
+        a                  skos:Concept ;
+        dc:identifier      "friedrichLoefflerInstitut" ;
+        skos:altLabel      "friedrichLoefflerInstitut"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/friedrichLoefflerInstitut> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Friedrich Loeffler Institut"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Friedrich Loeffler Institut"@de ;
+                             skos-xl:literalForm  "Friedrich Loeffler Institut"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/openNRW>
+        a                  skos:Concept ;
+        dc:identifier      "openNRW" ;
+        skos:altLabel      "openNRW"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/openNRW> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Open.NRW"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Open.NRW"@de ;
+                             skos-xl:literalForm  "Open.NRW"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundessortenamt>
+        a                  skos:Concept ;
+        dc:identifier      "bundessortenamt" ;
+        skos:altLabel      "bundessortenamt"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundessortenamt> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundessortenamt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundessortenamt"@de ;
+                             skos-xl:literalForm  "Bundessortenamt"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesamtFuerJustiz>
+        a                  skos:Concept ;
+        dc:identifier      "bundesamtFuerJustiz" ;
+        skos:altLabel      "bundesamtFuerJustiz"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesamtFuerJustiz> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesamt für Justiz"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesamt für Justiz"@de ;
+                             skos-xl:literalForm  "Bundesamt für Justiz"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumFuerWirtschaftUndEnergie>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumFuerWirtschaftUndEnergie" ;
+        skos:altLabel      "bundesministeriumFuerWirtschaftUndEnergie"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumFuerWirtschaftUndEnergie> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium für Wirtschaft und Energie"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium für Wirtschaft und Energie"@de ;
+                             skos-xl:literalForm  "Bundesministerium für Wirtschaft und Energie"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesverwaltungsamt>
+        a                  skos:Concept ;
+        dc:identifier      "bundesverwaltungsamt" ;
+        skos:altLabel      "bundesverwaltungsamt"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesverwaltungsamt> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesverwaltungsamt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesverwaltungsamt"@de ;
+                             skos-xl:literalForm  "Bundesverwaltungsamt"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/transparenzportalHamburg>
+        a                  skos:Concept ;
+        dc:identifier      "transparenzportalHamburg" ;
+        skos:altLabel      "transparenzportalHamburg"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/transparenzportalHamburg> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Transparenzportal Hamburg"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Transparenzportal Hamburg"@de ;
+                             skos-xl:literalForm  "Transparenzportal Hamburg"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/deutscheNationalbibliothek>
+        a                  skos:Concept ;
+        dc:identifier      "deutscheNationalbibliothek" ;
+        skos:altLabel      "deutscheNationalbibliothek"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/deutscheNationalbibliothek> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Deutsche Nationalbibliothek"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Deutsche Nationalbibliothek"@de ;
+                             skos-xl:literalForm  "Deutsche Nationalbibliothek"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/genesisDestatis>
+        a                  skos:Concept ;
+        dc:identifier      "genesisDestatis" ;
+        skos:altLabel      "genesisDestatis"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/genesisDestatis> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Statistisches Bundesamt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Statistisches Bundesamt"@de ;
+                             skos-xl:literalForm  "Statistisches Bundesamt"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesausgleichsamt>
+        a                  skos:Concept ;
+        dc:identifier      "bundesausgleichsamt" ;
+        skos:altLabel      "bundesausgleichsamt"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesausgleichsamt> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesausgleichsamt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesausgleichsamt"@de ;
+                             skos-xl:literalForm  "Bundesausgleichsamt"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesarchiv>
+        a                  skos:Concept ;
+        dc:identifier      "bundesarchiv" ;
+        skos:altLabel      "bundesarchiv"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesarchiv> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesarchiv"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesarchiv"@de ;
+                             skos-xl:literalForm  "Bundesarchiv"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/itzBund>
+        a                  skos:Concept ;
+        dc:identifier      "itzBund" ;
+        skos:altLabel      "itzBund"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/itzBund> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "ITZ-Bund"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "ITZ-Bund"@de ;
+                             skos-xl:literalForm  "ITZ-Bund"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/transparenzportalBremen>
+        a                  skos:Concept ;
+        dc:identifier      "transparenzportalBremen" ;
+        skos:altLabel      "transparenzportalBremen"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/transparenzportalBremen> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Transparenzportal Bremen"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Transparenzportal Bremen"@de ;
+                             skos-xl:literalForm  "Transparenzportal Bremen"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumFuerFamilieSeniorenFrauenUndJugend>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumFuerFamilieSeniorenFrauenUndJugend" ;
+        skos:altLabel      "bundesministeriumFuerFamilieSeniorenFrauenUndJugend"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumFuerFamilieSeniorenFrauenUndJugend> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium für Familie, Senioren, Frauen und Jugend"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium für Familie, Senioren, Frauen und Jugend"@de ;
+                             skos-xl:literalForm  "Bundesministerium für Familie, Senioren, Frauen und Jugend"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/schleswigHolstein>
+        a                  skos:Concept ;
+        dc:identifier      "schleswigHolstein" ;
+        skos:altLabel      "schleswigHolstein"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/schleswigHolstein> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Land Schleswig-Holstein"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Land Schleswig-Holstein"@de ;
+                             skos-xl:literalForm  "Land Schleswig-Holstein"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/auswaertigesAmt>
+        a                  skos:Concept ;
+        dc:identifier      "auswaertigesAmt" ;
+        skos:altLabel      "auswaertigesAmt"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/auswaertigesAmt> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Auswärtiges Amt"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Auswärtiges Amt"@de ;
+                             skos-xl:literalForm  "Auswärtiges Amt"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/freistaatSachsen>
+        a                  skos:Concept ;
+        dc:identifier      "freistaatSachsen" ;
+        skos:altLabel      "freistaatSachsen"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/freistaatSachsen> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Freistaat Sachsen"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Freistaat Sachsen"@de ;
+                             skos-xl:literalForm  "Freistaat Sachsen"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/openGovernmentDataPortalRheinlandPfalz>
+        a                  skos:Concept ;
+        dc:identifier      "openGovernmentDataPortalRheinlandPfalz" ;
+        skos:altLabel      "openGovernmentDataPortalRheinlandPfalz"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/openGovernmentDataPortalRheinlandPfalz> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "OpenGovernmentDataPortal RheinlandPfalz"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "OpenGovernmentDataPortal RheinlandPfalz"@de ;
+                             skos-xl:literalForm  "OpenGovernmentDataPortal RheinlandPfalz"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesanstaltFuerArbeitsschutzUndArbeitsmedizin>
+        a                  skos:Concept ;
+        dc:identifier      "bundesanstaltFuerArbeitsschutzUndArbeitsmedizin" ;
+        skos:altLabel      "bundesanstaltFuerArbeitsschutzUndArbeitsmedizin"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesanstaltFuerArbeitsschutzUndArbeitsmedizin> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesanstalt für Arbeitsschutz und Arbeitsmedizin"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesanstalt für Arbeitsschutz und Arbeitsmedizin"@de ;
+                             skos-xl:literalForm  "Bundesanstalt für Arbeitsschutz und Arbeitsmedizin"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/govData>
+        a                  skos:Concept ;
+        dc:identifier      "govData" ;
+        skos:altLabel      "govData"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/govData> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "GovData – das Datenportal für Deutschland"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "GovData – das Datenportal für Deutschland"@de ;
+                             skos-xl:literalForm  "GovData – das Datenportal für Deutschland"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesministeriumDerFinanzen>
+        a                  skos:Concept ;
+        dc:identifier      "bundesministeriumDerFinanzen" ;
+        skos:altLabel      "bundesministeriumDerFinanzen"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesministeriumDerFinanzen> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesministerium der Finanzen"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesministerium der Finanzen"@de ;
+                             skos-xl:literalForm  "Bundesministerium der Finanzen"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesamtFuerVerbraucherschutzUndLebensmittelsicherheit>
+        a                  skos:Concept ;
+        dc:identifier      "bundesamtFuerVerbraucherschutzUndLebensmittelsicherheit" ;
+        skos:altLabel      "bundesamtFuerVerbraucherschutzUndLebensmittelsicherheit"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesamtFuerVerbraucherschutzUndLebensmittelsicherheit> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesamt für Verbraucherschutz und Lebensmittelsicherheit"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesamt für Verbraucherschutz und Lebensmittelsicherheit"@de ;
+                             skos-xl:literalForm  "Bundesamt für Verbraucherschutz und Lebensmittelsicherheit"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesamtFuerWirtschaftUndAusfuhrkontrolle>
+        a                  skos:Concept ;
+        dc:identifier      "bundesamtFuerWirtschaftUndAusfuhrkontrolle" ;
+        skos:altLabel      "bundesamtFuerWirtschaftUndAusfuhrkontrolle"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesamtFuerWirtschaftUndAusfuhrkontrolle> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesamt für Wirtschaft und Ausfuhrkontrolle"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesamt für Wirtschaft und Ausfuhrkontrolle"@de ;
+                             skos-xl:literalForm  "Bundesamt für Wirtschaft und Ausfuhrkontrolle"@de
+                           ] .
+
+<http://dcat-ap.de/def/contributors/bundesanstaltFuerLandwirtschaftUndErnaehrung>
+        a                  skos:Concept ;
+        dc:identifier      "bundesanstaltFuerLandwirtschaftUndErnaehrung" ;
+        skos:altLabel      "bundesanstaltFuerLandwirtschaftUndErnaehrung"@de ;
+        skos:exactMatch    <http://dcat-ap.de/def/contributors/bundesanstaltFuerLandwirtschaftUndErnaehrung> ;
+        skos:inScheme      : ;
+        skos:prefLabel     "Bundesanstalt für Landwirtschaft und Ernährung"@de ;
+        skos:topConceptOf  : ;
+        skos-xl:prefLabel  [ a                    skos-xl:Label ;
+                             rdfs:label           "Bundesanstalt für Landwirtschaft und Ernährung"@de ;
+                             skos-xl:literalForm  "Bundesanstalt für Landwirtschaft und Ernährung"@de
+                           ] .

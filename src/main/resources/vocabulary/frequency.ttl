@@ -1,0 +1,854 @@
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix skos:  <http://www.w3.org/2004/02/skos/core#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix dct:   <http://purl.org/dc/terms/> .
+@prefix ns6:   <http://lemon-model.net/lemon#> .
+@prefix ns5:   <http://publications.europa.eu/ontology/euvoc#> .
+@prefix ns8:   <http://publications.europa.eu/ontology/authority/> .
+@prefix ns7:   <http://www.w3.org/2008/05/skos-xl#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix ns9:   <http://publications.europa.eu/ontology/authority/> .
+@prefix ns10:  <http://publications.europa.eu/resource/authority/> .
+@prefix dc:    <http://purl.org/dc/elements/1.1/> .
+
+<http://publications.europa.eu/resource/authority/frequency/BIHOURLY>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "BIHOURLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "BIHOURLY" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "BIHOURLY" ;
+        dc:identifier       "BIHOURLY" ;
+        dct:created         "2019-05-15"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-06-04"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-05-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The event occurs every two hours."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "kétóránkénti"@hu , "reizi divās stundās"@lv , "hver anden time"@da , "toutes les deux heures"@fr , "cada dos horas"@es , "ανά δύο ώρες"@el , "ogni due ore"@it , "bihourly"@en , "iga kahe tunni tagant"@et , "de duas em duas horas"@pt , "dvi valandas"@lt , "la fiecare două ore"@ro , "varannan timme"@sv , "om de twee uur"@nl , "alle zwei Stunden"@de , "joka toinen tunti"@fi , "každé 2 hodiny"@cs , "на два часа"@bg , "každé dve hodiny"@sk , "kull sagħtejn"@mt , "svaka dva sata"@hr , "vsaki dve uri"@sl , "gach dhá uair an chloig"@ga , "co dwie godziny"@pl ;
+        skos:topConceptOf   ns10:frequency ;
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/WEEKLY_3>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/PUB> ;
+        ns9:authority-code  "WEEKLY_3" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "WEEKLY_3" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "WEEKLY_3" ;
+        dc:identifier       "WEEKLY_3" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "τριεβδομαδιαία"@el , "τριεβδομαδιαίο"@el ;
+        skos:definition     "The event occurs three times a week."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/threeTimesAWeek> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "I"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "tres veces por semana"@es , "trois fois par semaine"@fr , "tre gånger per vecka"@sv , "hetente háromszori"@hu , "tre ganger i uken"@no , "trikrát týždenne"@sk , "trí uair in aghaidh na seachtaine"@ga , "tliet darbiet fil-ġimgħa"@mt , "de trei ori pe săptămână"@ro , "triput tjedno"@hr , "trikrat tedensko"@sl , "три пъти на седмица"@bg , "drie keer per week"@nl , "three times a week"@en , "dreimal in Woche"@de , "třikrát týdně"@cs , "kolm korda nädalas"@et , "τριεβδομαδιαίος"@el , "tre gange ugentligt"@da , "trzy razy w tygodniu"@pl , "trīsreiz nedēļā"@lv , "tre volte a settimana"@it , "tris kartus per savaitę"@lt , "três vezes por semana"@pt , "kolme kertaa viikossa"@fi ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/DECENNIAL>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "DECENNIAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "DECENNIAL" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "DECENNIAL" ;
+        dc:identifier       "DECENNIAL" ;
+        dct:created         "2019-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-02-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-01-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The event occurs every ten years."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "decennial"@en , "vsakih deset let"@sl , "cada diez años"@es , "gach deich mbliana"@ga , "alle zehn Jahre"@de , "iga 10 aasta tagant"@et , "reizi 10 gados"@lv , "om de tien jaar"@nl , "kas dešimt metų"@lt , "tous les dix ans"@fr , "svakih deset godina"@hr , "la fiecare zece ani"@ro , "joka kymmenes vuosi"@fi , "každých 10 let"@cs , "ανά δέκα έτη"@el , "decennale"@it , "de dez em dez anos"@pt , "každých desať rokov"@sk , "tízévenkénti"@hu , "на десет години"@bg , "vart 10:e år"@sv , "hvert tiende år"@da , "co dziesięć lat"@pl , "deċennali"@mt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/TRIHOURLY>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "TRIHOURLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "TRIHOURLY" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "TRIHOURLY" ;
+        dc:identifier       "TRIHOURLY" ;
+        dct:created         "2019-05-15"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-06-04"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-05-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The event occurs every three hours."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "joka kolmas tunti"@fi , "iga kolme tunni tagant"@et , "háromóránkénti"@hu , "reizi trīs stundās"@lv , "co trzy godziny"@pl , "alle drei Stunden"@de , "svaka tri sata"@hr , "kull tliet sigħat"@mt , "la fiecare trei ore"@ro , "ανά τρεις ώρες"@el , "každé tri hodiny"@sk , "de três em três horas"@pt , "toutes les trois heures"@fr , "gach trí uair an chloig"@ga , "trihourly"@en , "tris valandas"@lt , "на три часа"@bg , "ogni tre ore"@it , "hver tredje time"@da , "om de drie uur"@nl , "každé 3 hodiny"@cs , "var tredje timme"@sv , "cada tres horas"@es , "vsake tri ure"@sl ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/QUARTERLY>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> ;
+        ns9:authority-code  "QUARTERLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "QUARTERLY" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "QUARTERLY" ;
+        dc:identifier       "QUARTERLY" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "vierteljährliches"@de , "vierteljährliche"@de , "štvrťročné"@sk , "štvrťročná"@sk , "trimestrială"@ro , "τριμηνιαίο"@el , "τριμηνιαία"@el , "trimestrielle"@fr , "četrtletno"@sl , "četrtletna"@sl ;
+        skos:definition     "The event occurs every three months."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/quarterly> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "T"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "kwartalnik"@pl , "trimestrial"@ro , "negyedévenkénti"@hu , "reizi trīs mēnešos"@lv , "quarterly"@en , "kvartaalne"@et , "kvartalsvis"@no , "kvartalsvis"@da , "kvartalsvis"@sv , "trimestrale"@it , "vierteljährlich"@de , "ráitheachán"@ga , "četrtletni"@sl , "kull tliet xhur"@mt , "trimestriel"@fr , "vuosineljänsittäin"@fi , "tromjesečno"@hr , "štvrťročný"@sk , "тримесечен"@bg , "driemaandelijks"@nl , "trimestral"@es , "trimestral"@pt , "τριμηνιαίος"@el , "čtvrtletní"@cs , "kas ketvirtį"@lt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/BIWEEKLY>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "BIWEEKLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "BIWEEKLY" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "BIWEEKLY" ;
+        dc:identifier       "BIWEEKLY" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "zweiwöchentliche"@de , "dvojtýždenná"@sk , "dvojtýždenné"@sk , "δισεβδομαδιαίο"@el , "zweiwöchentliches"@de , "δισεβδομαδιαία"@el ;
+        skos:definition     "The event occurs every two weeks."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/biweekly> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "SEMIM"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "dvojtýždenný"@sk , "gach coicís"@ga , "reizi divās nedēļās"@lv , "ta’ kull ħmistax"@mt , "čtrnáctidenní"@cs , "tous les quinze jours"@fr , "veertiendaags"@nl , "la fiecare două săptămâni"@ro , "joka toinen viikko"@fi , "quinzenal"@pt , "polumjesečno"@hr , "zweiwöchentlich"@de , "kas dvi savaites"@lt , "δισεβδομαδιαίος"@el , "quindicinale"@it , "var fjortonde dag"@sv , "vsakih štirinajst dni"@sl , "quincenal"@es , "kahenädalane"@et , "на две седмици"@bg , "hver fjortende dag"@da , "hver fjortende dag"@no , "kéthetenkénti"@hu , "dwutygodnik"@pl , "biweekly"@en ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/DAILY>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "DAILY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "DAILY" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "DAILY" ;
+        dc:identifier       "DAILY" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "ежедневна"@bg , "dnevno"@sl , "diaria"@es , "quotidienne"@fr , "tägliches"@de , "kasdieninė"@lt , "ημερήσια"@el , "denná"@sk , "tägliche"@de , "dnevna"@sl , "quotidiana"@it , "ежедневно"@bg , "daglig"@da , "zilnică"@ro , "diária"@pt , "ημερήσιο"@el , "denné"@sk ;
+        skos:definition     "The event occurs once a day."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/daily> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "Q"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "quotidien"@fr , "diário"@pt , "täglich"@de , "dagelijks"@nl , "päivittäin"@fi , "ежедневен"@bg , "laethúil"@ga , "denní"@cs , "diario"@es , "dagligen"@sv , "quotidiano"@it , "katru dienu"@lv , "zilnic"@ro , "kuljum"@mt , "dziennik"@pl , "daglig"@no , "päevane"@et , "naponkénti"@hu , "denný"@sk , "daily"@en , "ημερήσιος"@el , "dagligt"@da , "dnevni"@sl , "dnevni"@hr , "kasdieninis"@lt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/QUADRENNIAL>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "QUADRENNIAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "QUADRENNIAL" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "QUADRENNIAL" ;
+        dc:identifier       "QUADRENNIAL" ;
+        dct:created         "2019-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-02-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-01-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "vierjährliche"@de , "čtyřletá"@cs , "čtyřleté"@cs , "vierjährliches"@de ;
+        skos:definition     "The event occurs every four years."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "négyévenkénti"@hu , "každé štyri roky"@sk , "reizi četros gados"@lv , "svake četiri godine"@hr , "quadrienal"@pt , "hvert fjerde år"@da , "iga nelja aasta järel"@et , "ogni quattro anni"@it , "на четири години"@bg , "čtyřletý"@cs , "ανά τετραετία"@el , "tous les quatre ans"@fr , "vart fjärde år"@sv , "om de vier jaar"@nl , "cada cuatro años"@es , "kas ketverius metus"@lt , "joka neljäs vuosi"@fi , "vsaka štiri leta"@sl , "co cztery lata"@pl , "uair sna ceithre bliana"@ga , "vierjährlich"@de , "kwadriennali"@mt , "o dată la patru ani"@ro , "quadrennial"@en ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/OP_DATPRO>
+        a                  skos:Concept , ns5:Frequency , dct:Frequency;
+        ns9:op-code        "OP_DATPRO" ;
+        ns5:status         <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        ns10:op-code       "OP_DATPRO" ;
+        dc:identifier      "OP_DATPRO" ;
+        dct:created        "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo    "20190619-0" ;
+        skos:inScheme      ns10:frequency ;
+        skos:prefLabel     "Vorläufige Daten"@de , "Ideiglenes adatok"@hu , "Privremeni podaci"@hr , "Predbežné údaje"@sk , "Sonraí sealadacha"@ga , "Datos provisionales"@es , "Voorlopige gegevens"@nl , "Provizoriski dati"@lv , "Tillfälliga uppgifter"@sv , "Dejta provviżorja"@mt , "Laikinieji duomenys"@lt , "Προσωρινά δεδομένα"@el , "Date provizorii"@ro , "Midlertidige data"@da , "Données provisoires"@fr , "Dados provisórios"@pt , "Provisional data"@en , "Esialgsed andmed"@et , "Dati provvisori"@it , "НЕОКОНЧАТЕЛНИ ДАННИ"@bg , "Předběžné údaje"@cs , "Alustavat tiedot"@fi , "Začasni podatki"@sl , "Dane tymczasowe"@pl ;
+        skos:topConceptOf  ns10:frequency ;
+        ns7:prefLabel      []  ;
+        ns7:prefLabel      []  .
+
+<http://publications.europa.eu/resource/authority/frequency/WEEKLY>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "WEEKLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "WEEKLY" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "WEEKLY" ;
+        dc:identifier       "WEEKLY" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "ugentlig"@da , "săptămânală"@ro , "εβδομαδιαία"@el , "седмично"@bg , "седмична"@bg , "týždenná"@sk , "hebdomadária"@pt , "wöchentliches"@de , "εβδομαδιαίο"@el , "týždenné"@sk , "wöchentliche"@de ;
+        skos:definition     "The event occurs once a week."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/weekly> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "H"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "tedensko"@sl , "kull ġimgħa"@mt , "týždenný"@sk , "hebdomadário"@pt , "wöchentlich"@de , "ugentligt"@da , "weekly"@en , "wekelijks"@nl , "tjedni"@hr , "veckovis"@sv , "semanal"@es , "in aghaidh na seachtaine"@ga , "hetenkénti"@hu , "εβδομαδιαίος"@el , "reizi nedēļā"@lv , "hebdomadaire"@fr , "settimanale"@it , "týdenní"@cs , "tygodnik"@pl , "nädalane"@et , "săptămânal"@ro , "viikoittainen"@fi , "ukentlig"@no , "седмичен"@bg , "kas savaitę"@lt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/OTHER>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "OTHER" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "OTHER" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "OTHER" ;
+        dc:identifier       "OTHER" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "otra"@es , "outra"@pt , "kita"@lt , "andere"@de , "ostala"@sl , "anderes"@de , "друго"@bg , "anden"@da , "друга"@bg , "ostalo"@sl ;
+        skos:definition     "The event occurs with another type of regularity (for instance, every leap year)."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "Z"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "drugi"@hr , "ostatné"@sk , "altele"@ro , "egyéb"@hu , "kitas"@lt , "altro"@it , "anderer"@de , "ostatní"@cs , "oħra"@mt , "άλλο"@el , "ostali"@sl , "muu"@et , "andra"@sv , "citi"@lv , "autre"@fr , "andet"@da , "otro"@es , "inne"@pl , "друг"@bg , "outro"@pt , "muut"@fi , "other"@en , "overige"@nl , "annet"@no , "eile"@ga ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/WEEKLY_2>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> ;
+        ns9:authority-code  "WEEKLY_2" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "WEEKLY_2" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "WEEKLY_2" ;
+        dc:identifier       "WEEKLY_2" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "διεβδομαδιαία"@el , "διεβδομαδιαίο"@el ;
+        skos:definition     "The event occurs twice a week."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/semiweekly> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "C"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "twee keer per week"@nl , "dwa razy w tygodniu"@pl , "to gange ugentligt"@da , "zweimal in Woche"@de , "dukart per savaitę"@lt , "bisemanal"@es , "bisettimanale"@it , "дваж на седмица"@bg , "dvakrat tedensko"@sl , "bihebdomadaire"@fr , "kaksi kertaa viikossa"@fi , "to ganger i uken"@no , "de două ori pe săptămână"@ro , "dvakrát týždenne"@sk , "hetente kétszeri"@hu , "darbtejn fil-ġimgħa"@mt , "två gånge per vecka"@sv , "dhá uair in aghaidh na seachtaine"@ga , "duas vezes por semana"@pt , "semiweekly"@en , "dvaput tjedno"@hr , "dvakrát týdně"@cs , "διεβδομαδιαίος"@el , "kaks korda nädalas"@et , "divreiz nedēļā"@lv ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/IRREG>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/PUB> ;
+        ns9:authority-code  "IRREG" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "IRREG" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "IRREG" ;
+        dc:identifier       "IRREG" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "неправилна"@bg , "oregelbunden"@sv , "nereguliari"@lt , "nepravilno"@sl , "unregelmäßiges"@de , "nieregularna"@pl , "nepravidelná"@cs , "nepravidelná"@sk , "neregulată"@ro , "μη τακτική"@el , "неправилно"@bg , "neredovita"@hr , "nieregularne"@pl , "irrégulière"@fr , "uregelmæssig"@da , "nepravidelné"@sk , "μη τακτικό"@el , "nepravidelné"@cs , "nepravilna"@sl , "unregelmäßige"@de ;
+        skos:definition     "The event occurs at uneven intervals."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/irregular> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "IRR"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "irregolari"@mt , "rendszertelen"@hu , "irregular"@es , "irregular"@en , "irregular"@pt , "nepravidelný"@cs , "nepravidelný"@sk , "неправилен"@bg , "oregelbundet"@sv , "μη τακτικός"@el , "uregelmessig"@no , "uregelmæssigt"@da , "irrégulier"@fr , "neregulat"@ro , "nereguliarus"@lt , "ebakorrapärane"@et , "epäsäännöllinen"@fi , "nieregularny"@pl , "neredovit"@hr , "irregolare"@it , "neregulāri"@lv , "nepravilen"@sl , "neamhrialta"@ga , "onregelmatig"@nl , "unregelmäßig"@de ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/DAILY_2>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> ;
+        ns9:authority-code  "DAILY_2" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "DAILY_2" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "DAILY_2" ;
+        dc:identifier       "DAILY_2" ;
+        dct:created         "2014-10-29"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The event occurs twice a day."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "zweimal täglich"@de , "to gange om dagen"@da , "dvaput dnevno"@hr , "δύο φορές την ημέρα"@el , "dvakrát denne"@sk , "duas vezes por dia"@pt , "to ganger per dag"@no , "dukart per dieną"@lt , "due volte al giorno"@it , "divreiz dienā"@lv , "tweemaal per dag"@nl , "kaks korda päevas"@et , "twice a day"@en , "два пъти на ден"@bg , "kahdesti päivässä"@fi , "dvakrat dnevno"@sl , "darbtejn kuljum"@mt , "dwa razy dziennie"@pl , "två gånger per dag"@sv , "dhá uair sa lá"@ga , "deux fois par jour"@fr , "naponta kétszeri"@hu , "dvakrát denně"@cs , "dos veces al día"@es , "de două ori pe zi"@ro ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/MONTHLY_3>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "MONTHLY_3" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "MONTHLY_3" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "MONTHLY_3" ;
+        dc:identifier       "MONTHLY_3" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The event occurs three times a month."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/threeTimesAMonth> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "J"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "havonta háromszori"@hu , "kolm korda kuus"@et , "tre volte al mese"@it , "trois fois par mois"@fr , "trí uair sa mhí"@ga , "trikrát mesačne"@sk , "trikrat na mesec"@sl , "drie keer per maand"@nl , "de trei ori pe lună"@ro , "trzy razy w miesiącu"@pl , "three times a month"@en , "tres veces por mes"@es , "três vezes por mês"@pt , "triput mjesečno"@hr , "tre gange månedligt"@da , "kolme kertaa kuukaudessa"@fi , "třikrát za měsíc"@cs , "trīsreiz mēnesī"@lv , "tris kartus per mėnesį"@lt , "tliet darbiet fix-xahar"@mt , "три пъти месечно"@bg , "tre ganger i måneden"@no , "dreimal im Monat"@de , "tre gånger per månad"@sv , "τρεις φορές τον μήνα"@el ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/HOURLY>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "HOURLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "HOURLY" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "HOURLY" ;
+        dc:identifier       "HOURLY" ;
+        dct:created         "2019-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-02-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-01-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "stündliche"@de , "stündliches"@de ;
+        skos:definition     "The event occurs every hour."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "cada hora"@es , "gach uair an chloig"@ga , "en gång i timmen"@sv , "toutes les heures"@fr , "každú hodinu"@sk , "svaki sat"@hr , "kas valandą"@lt , "stündlich"@de , "hver time"@da , "la fiecare oră"@ro , "ogni ora"@it , "každou hodinu"@cs , "joka tunti"@fi , "om het uur"@nl , "reizi stundā"@lv , "kord tunnis"@et , "на всеки час"@bg , "co godzinę"@pl , "ανά ώρα"@el , "hora a hora"@pt , "vsako uro"@sl , "kull siegħa"@mt , "hourly"@en , "óránkénti"@hu ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+ns10:frequency  a                 skos:ConceptScheme , owl:Ontology ;
+        rdfs:comment              "Frequency"^^rdfs:Literal ;
+        rdfs:label                "Frequency"@en ;
+        ns9:prefLabel             "Frequency"@en ;
+        ns9:table.id              "frequency" ;
+        ns9:table.version.number  "20190619-0" ;
+        dct:identifier            "http://publications.europa.eu/resource/authority/frequency" ;
+        owl:imports               <http://publications.europa.eu/ontology/euvoc> ;
+        owl:versionIRI            <http://publications.europa.eu/resource/authority/frequency/20190619-0> ;
+        owl:versionInfo           "20190619-0" ;
+        skos:prefLabel            "Frequency"@en ;
+        ns7:prefLabel             []  ;
+        ns7:prefLabel             []  .
+
+<http://publications.europa.eu/resource/authority/frequency/NEVER>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> ;
+        ns9:authority-code  "NEVER" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "NEVER" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "NEVER" ;
+        dc:identifier       "NEVER" ;
+        dct:created         "2015-04-17"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2016-01-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2016-01-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The item is never updated."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "soha"@hu , "никога"@bg , "aldri"@no , "niemals"@de , "qatt"@mt , "nikada"@hr , "mitte kunagi"@et , "aldrig"@sv , "aldrig"@da , "nooit"@nl , "niekada"@lt , "ei koskaan"@fi , "jamais"@fr , "nigdy"@pl , "riamh"@ga , "niciodată"@ro , "nekad"@lv , "nikdy"@sk , "nikdy"@cs , "ποτέ"@el , "nikoli"@sl , "never"@en , "mai"@it , "nunca"@es , "nunca"@pt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/QUINQUENNIAL>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "QUINQUENNIAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "QUINQUENNIAL" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "QUINQUENNIAL" ;
+        dc:identifier       "QUINQUENNIAL" ;
+        dct:created         "2019-01-14"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-02-07"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-01-23"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "fünfjährliche"@de , "pětiletá"@cs , "fünfjährliches"@de , "pětileté"@cs ;
+        skos:definition     "The event occurs every five years."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "reizi piecos gados"@lv , "kwinkwennali"@mt , "ogni cinque anni"@it , "co pięć lat"@pl , "joka viides vuosi"@fi , "tous les cinq ans"@fr , "cada cinco años"@es , "ötévenkénti"@hu , "ανά πενταετία"@el , "fünfjährlich"@de , "vsakih pet let"@sl , "на пет години"@bg , "svakih pet godina"@hr , "vart femte år"@sv , "om de vijf jaar"@nl , "quinquennial"@en , "o dată la cinci ani"@ro , "quinquenal"@pt , "iga viie aasta järel"@et , "uair sna cúig bliana"@ga , "pětiletý"@cs , "každých päť rokov"@sk , "hvert femte år"@da , "kas penkerius metus"@lt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/TRIDECENNIAL>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "TRIDECENNIAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "TRIDECENNIAL" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "TRIDECENNIAL" ;
+        dc:identifier       "TRIDECENNIAL" ;
+        dct:created         "2019-05-15"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-06-04"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-05-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The event occurs every thirty years."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "harmincévenkénti"@hu , "trideċennali"@mt , "la fiecare treizeci de ani"@ro , "tridecennial"@en , "tridecennale"@it , "každých 30 let"@cs , "cada treinta años"@es , "tous les trente ans"@fr , "gach tríocha bliain"@ga , "на тридесет години"@bg , "alle dreißig Jahre"@de , "iga 30 aasta tagant"@et , "každých tridsať rokov"@sk , "vsakih trideset let"@sl , "hvert tredivte år"@da , "kas trisdešimt metų"@lt , "co trzydzieści lat"@pl , "joka kolmaskymmenes vuosi"@fi , "de trinta em trinta anos"@pt , "svakih trideset godina"@hr , "vart 30:e år"@sv , "reizi 30 gados"@lv , "ανά τριάντα έτη"@el , "om de dertig jaar"@nl ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/MONTHLY_2>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> ;
+        ns9:authority-code  "MONTHLY_2" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "MONTHLY_2" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "MONTHLY_2" ;
+        dc:identifier       "MONTHLY_2" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "δεκαπενθήμερη"@el , "δεκαπενθήμερο"@el , "bimensuelle"@fr ;
+        skos:definition     "The event occurs twice a month."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/semimonthly> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "E"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "dvakrát mesačne"@sk , "dwukrotnie w miesiącu"@pl , "kaks korda kuus"@et , "dvakrát za měsíc"@cs , "dukart per mėnesį"@lt , "darbtejn fix-xahar"@mt , "se două ori pe lună"@ro , "на половин месец"@bg , "félhavonkénti"@hu , "dvakrat na mesec"@sl , "to gange månedligt"@da , "dvaput mjesečno"@hr , "twee keer per maand"@nl , "kaksi kertaa kuukaudessa"@fi , "två gånger per månad"@sv , "semimonthly"@en , "duas vezes por mês"@pt , "bimensile"@it , "bimensuel"@fr , "bimensual"@es , "δεκαπενθήμερος"@el , "leath-míosúil"@ga , "zweimal im Monat"@de , "divreiz mēnesī"@lv , "to ganger i måneden"@no ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/BIENNIAL>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> ;
+        ns9:authority-code  "BIENNIAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "BIENNIAL" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "BIENNIAL" ;
+        dc:identifier       "BIENNIAL" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "biennale"@fr , "zweijährliche"@de , "dvouletá"@cs , "dwuletnie"@pl , "dvouleté"@cs , "toårig"@da , "dwuletnia"@pl , "bienală"@ro , "zweijährliches"@de , "dvojročná"@sk , "dvojročné"@sk ;
+        skos:definition     "The event occurs every two years."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/biennial> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "G"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "tweejaarlijks"@nl , "dvouletý"@cs , "dhébhliantúil"@ga , "iga kahe aasta järel"@et , "διετής"@el , "dwuletni"@pl , "annethvert år"@no , "vartannat år"@sv , "reizi divos gados"@lv , "bijenale"@hr , "biennal"@fr , "kas dvejus metus"@lt , "biennali"@mt , "toårigt"@da , "bienal"@pt , "bienal"@ro , "bienal"@es , "biennale"@it , "kétévenkénti"@hu , "kaksivuotinen"@fi , "zweijährlich"@de , "двегодишен"@bg , "biennial"@en , "dvojročný"@sk , "bienale"@sl ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/TRIENNIAL>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "TRIENNIAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "TRIENNIAL" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "TRIENNIAL" ;
+        dc:identifier       "TRIENNIAL" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "triennale"@fr , "dreijährliche"@de , "dreijährliches"@de , "trienală"@ro , "treårlig"@da , "trojročná"@sk , "tříletá"@cs , "trzyletnie"@pl , "trojročné"@sk , "tříleté"@cs , "trzyletnia"@pl ;
+        skos:definition     "The event occurs every three years."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/triennial> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "D"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "triennal"@fr , "trimetis"@lt , "vart tredje år"@sv , "trijenale"@hr , "kolmivuotinen"@fi , "reizi trīs gados"@lv , "hvert tredje år"@no , "trojročný"@sk , "iga kolme aasta järel"@et , "triennali"@mt , "driejaarlijks"@nl , "тригодишен"@bg , "τριετής"@el , "treårligt"@da , "trienale"@sl , "háromévenkénti"@hu , "trienal"@pt , "trienal"@es , "trienal"@ro , "tríbhliantúil"@ga , "dreijährlich"@de , "triennial"@en , "tříletý"@cs , "triennale"@it , "trzyletni"@pl ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/CONT>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "CONT" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "CONT" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "CONT" ;
+        dc:identifier       "CONT" ;
+        dct:created         "2015-03-11"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2015-06-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2015-06-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "průběžná"@cs , "kontinuerlig"@da , "priebežné"@sk , "kontinuierliche"@de , "постоянно"@bg , "stalna"@hr , "ciągłe"@pl , "stalno"@hr , "nenehno"@sl , "ciągła"@pl , "priebežná"@sk , "continuelle"@fr , "постоянна"@bg , "nenehna"@sl , "průběžné"@cs , "συνεχές"@el , "kontinuierliches"@de , "contínua"@pt , "continua"@it , "continua"@es ;
+        skos:definition     "The item is updated more frequent than daily."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/continuous> ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "nenutrūkstamas"@lt , "leanúnach"@ga , "continuo"@es , "continuo"@it , "folyamatos"@hu , "priebežný"@sk , "постоянен"@bg , "jatkuva"@fi , "kontinuerligt"@da , "kontinuierlich"@de , "ciągły"@pl , "pastāvīgi"@lv , "průběžný"@cs , "kontinwu"@mt , "voortdurend"@nl , "continuel"@fr , "continuu"@ro , "continuous"@en , "stalan"@hr , "nenehen"@sl , "συνεχής"@el , "kontinuerlig"@sv , "kontinuerlig"@no , "pidev"@et , "contínuo"@pt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/MONTHLY>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/PUB> ;
+        ns9:authority-code  "MONTHLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "MONTHLY" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "MONTHLY" ;
+        dc:identifier       "MONTHLY" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "μηνιαίο"@el , "monatliche"@de , "månedlig"@da , "μηνιαία"@el , "mesačné"@sk , "mesečno"@sl , "mesačná"@sk , "monatliches"@de , "lunară"@ro , "mensuelle"@fr , "mesečna"@sl ;
+        skos:definition     "The event occurs once a month."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/monthly> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "M"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "měsíční"@cs , "kas mėnesį"@lt , "mesačný"@sk , "monatlich"@de , "mensile"@it , "monthly"@en , "mensual"@es , "mensili"@mt , "månatligen"@sv , "lunar"@ro , "mjesečno"@hr , "mesečen"@sl , "μηνιαίος"@el , "månedlig"@no , "mensal"@pt , "miesięcznik"@pl , "igakuine"@et , "maandelijks"@nl , "havonkénti"@hu , "mensuel"@fr , "reizi mēnesī"@lv , "månedligt"@da , "kuukausittainen"@fi , "месечен"@bg , "míosúil"@ga ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/BIMONTHLY>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/PUB> ;
+        ns9:authority-code  "BIMONTHLY" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "BIMONTHLY" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "BIMONTHLY" ;
+        dc:identifier       "BIMONTHLY" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "bimestrielle"@fr , "dvojmesačná"@sk , "bilunară"@ro , "dvojmesačné"@sk , "διμηνιαίο"@el , "dvomesečna"@sl , "dvomesečno"@sl , "διμηνιαία"@el , "zweimonatliche"@de , "zweimonatliches"@de ;
+        skos:definition     "The event occurs every two months."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/bimonthly> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "BIM"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "bimestrale"@it , "dvojmesačný"@sk , "zweimonatlich"@de , "bimestral"@es , "tweemaandelijks"@nl , "kas du mėnesius"@lt , "bilunar"@ro , "kord kahe kuu jooksul"@et , "kéthavonkénti"@hu , "dvomjesečno"@hr , "dvouměsíční"@cs , "bimensili"@mt , "dwumiesięcznik"@pl , "διμηνιαίος"@el , "bimonthly"@en , "varannan månad"@sv , "bimestriel"@fr , "annenhver måned"@no , "kahdesti kuussa"@fi , "reizi divos mēnešos"@lv , "quinzenal"@pt , "dvomesečen"@sl , "двухмесечен"@bg , "gach dhá mhí"@ga , "hver anden måned"@da ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/ANNUAL_3>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> ;
+        ns9:authority-code  "ANNUAL_3" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "ANNUAL_3" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "ANNUAL_3" ;
+        dc:identifier       "ANNUAL_3" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "τετραμηνιαία"@el , "τετραμηνιαίο"@el ;
+        skos:definition     "The event occurs three times a year."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/threeTimesAYear> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "F"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "dreimal im Jahr"@de , "tre gånger per år"@sv , "três vezes por ano"@pt , "trí uair sa bhliain"@ga , "kolme kertaa vuodessa"@fi , "triput godišnje"@hr , "třikrát do roka"@cs , "tre ganger per år"@no , "drie keer per jaar"@nl , "trois fois par an"@fr , "évente háromszori"@hu , "three times a year"@en , "trīsreiz gadā"@lv , "trikrat na leto"@sl , "три пъти на година"@bg , "tris kartus per metus"@lt , "τετραμηνιαίος"@el , "tre gange årligt"@da , "de trei ori pe an"@ro , "tre volte all'anno"@it , "tliet darbiet fis-sena"@mt , "trzy razy w roku"@pl , "kolm korda aastas"@et , "trikrát do roka"@sk , "cuatrimestral"@es ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/UPDATE_CONT>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "UPDATE_CONT" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "UPDATE_CONT" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "UPDATE_CONT" ;
+        dc:identifier       "UPDATE_CONT" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "nenehno posodobljeno"@sl , "priebežne aktualizované"@sk , "nenehno posodobljena"@sl , "continuamente actualizada"@es , "priebežne aktualizovaná"@sk , "stale aktualizowane"@pl , "průběžně aktualizovaná"@cs , "stale aktualizowana"@pl , "continuamente atualizada"@pt , "průběžně aktualizované"@cs ;
+        skos:definition     "The event repeats without interruption."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "K"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "průběžně aktualizovaný"@cs , "ενημερώνεται συνεχώς"@el , "päivitetään jatkuvasti"@fi , "nenehno posodobljen"@sl , "opdateres løbende"@da , "ständige Aktualisierung"@de , "folyamatosan frissített"@hu , "actualizare continuă"@ro , "постоянно се актуализира"@bg , "nuolat atnaujinama"@lt , "kontinuerlig oppdatert"@no , "continuously updated"@en , "continuamente atualizado"@pt , "voortdurend geactualiseerd"@nl , "continuamente actualizado"@es , "ajakohastatakse pidevalt"@et , "kontinwament aġġornata"@mt , "stalno ažuriraju"@hr , "mise à jour continuelle"@fr , "priebežne aktualizovaný"@sk , "in continuo aggiornamento"@it , "á leasú chun dáta go leanúnach"@ga , "pastāvīgi tiek atjaunots"@lv , "stale aktualizowany"@pl , "uppdateras kontinuerligt"@sv ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/ANNUAL_2>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/PUB> ;
+        ns9:authority-code  "ANNUAL_2" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "ANNUAL_2" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "ANNUAL_2" ;
+        dc:identifier       "ANNUAL_2" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "półroczna"@pl , "polročné"@sk , "polletno"@sl , "polročná"@sk , "halbjährliche"@de , "semestrială"@ro , "półroczne"@pl , "polletna"@sl , "semestrielle"@fr , "εξαμηνιαία"@el , "halvårlig"@da , "halbjährliches"@de , "εξαμηνιαίο"@el ;
+        skos:definition     "The event occurs twice a year."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/semiannual> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "S"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "polročný"@sk , "halvårligt"@da , "puolivuotinen"@fi , "halfjaarlijks"@nl , "semestriel"@fr , "halvårs"@sv , "pololetní"@cs , "półroczny"@pl , "polletni"@sl , "polugodišnje"@hr , "leathbhliantúil"@ga , "εξαμηνιαίος"@el , "félévenkénti"@hu , "semianual"@pt , "kull sitt xhur"@mt , "semestrale"@it , "halvårlig"@no , "semiannual"@en , "reizi pusgadā"@lv , "pooleaastane"@et , "semestrial"@ro , "два пъти на година"@bg , "semestral"@es , "halbjährlich"@de , "kas pusę metų"@lt ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/BIDECENNIAL>
+        a                   ns5:Frequency , dct:Frequency, skos:Concept ;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "BIDECENNIAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "BIDECENNIAL" ;
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        ns10:op-code        "BIDECENNIAL" ;
+        dc:identifier       "BIDECENNIAL" ;
+        dct:created         "2019-05-15"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2019-06-04"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2019-05-20"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:definition     "The event occurs every twenty years."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:prefLabel      "bideċennali"@mt , "vart 20:e år"@sv , "de vinte em vinte anos"@pt , "húszévenkénti"@hu , "ανά είκοσι έτη"@el , "svakih dvadeset godina"@hr , "vsakih dvajset let"@sl , "alle zwanzig Jahre"@de , "každých dvadsať rokov"@sk , "iga 20 aasta tagant"@et , "gach fiche bliain"@ga , "la fiecare douăzeci de ani"@ro , "bidecennale"@it , "kas dvidešimt metų"@lt , "reizi 20 gados"@lv , "cada veinte años"@es , "bidecennial"@en , "hvert tyvende år"@da , "joka kahdeskymmenes vuosi"@fi , "tous les vingt ans"@fr , "co dwadzieścia lat"@pl , "každých 20 let"@cs , "на двадесет години"@bg , "om de twintig jaar"@nl ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/ANNUAL>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "ANNUAL" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "ANNUAL" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "ANNUAL" ;
+        dc:identifier       "ANNUAL" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "annuelle"@fr , "ετήσια"@el , "roczne"@pl , "jährliche"@de , "roczna"@pl , "anuală"@ro , "letna"@sl , "ετήσιο"@el , "årlig"@da , "ročná"@sk , "ročné"@sk , "годишно"@bg , "jährliches"@de , "годишна"@bg , "letno"@sl ;
+        skos:definition     "The event occurs once a year."@en ;
+        skos:exactMatch     <http://purl.org/cld/freq/annual> ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "ANN"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "jährlich"@de , "reizi gadā"@lv , "годишен"@bg , "jaarlijks"@nl , "ročný"@sk , "årlig"@no , "årlig"@sv , "roczny"@pl , "godišnje"@hr , "letni"@sl , "vuotuinen"@fi , "annwali"@mt , "kasmetinis"@lt , "annuel"@fr , "bliantúil"@ga , "årligt"@da , "aastane"@et , "anual"@pt , "anual"@es , "anual"@ro , "ετήσιος"@el , "annual"@en , "roční"@cs , "annuale"@it , "évenkénti"@hu ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
+
+<http://publications.europa.eu/resource/authority/frequency/UNKNOWN>
+        a                   skos:Concept , ns5:Frequency , dct:Frequency;
+        ns6:context         <http://publications.europa.eu/resource/authority/use-context/ODP> , <http://publications.europa.eu/resource/authority/use-context/PUB> , <http://publications.europa.eu/resource/authority/use-context/IMMC> ;
+        ns9:authority-code  "UNKNOWN" ;
+        ns9:deprecated      "false" ;
+        ns9:op-code         "UNKNOWN" ;
+        
+        ns9:start.use       "1952-07-25" ;
+        ns5:startDate       "1952-07-25"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        ns5:status          <http://publications.europa.eu/resource/authority/concept-status/CURRENT> ;
+        
+        
+        ns10:op-code        "UNKNOWN" ;
+        dc:identifier       "UNKNOWN" ;
+        dct:created         "2014-03-06"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateAccepted    "2014-11-19"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        dct:dateSubmitted   "2014-11-05"^^<http://www.w3.org/2001/XMLSchema#date> ;
+        owl:versionInfo     "20190619-0" ;
+        skos:altLabel       "desconhecida"@pt , "άγνωστη"@el , "desconocida"@es , "nepoznano"@sl , "unbekannte"@de , "непознато"@bg , "nepoznata"@hr , "neznáma"@sk , "unbekanntes"@de , "inconnue"@fr , "nepoznana"@sl , "sconosciuta"@it , "neznámá"@cs , "непозната"@bg , "nieznana"@pl , "nežinoma"@lt , "necunoscută"@ro , "neznámé"@cs , "nieznane"@pl , "neznáme"@sk ;
+        skos:definition     "The event occurs with unknown regularity."@en ;
+        skos:inScheme       ns10:frequency ;
+        skos:notation       "U"^^ns5:PUB_FREQ ;
+        skos:prefLabel      "unknown"@en , "desconhecido"@pt , "nežinomas"@lt , "sconosciuto"@it , "unbekannt"@de , "anaithnid"@ga , "neznámy"@sk , "necunoscut"@ro , "ukjent"@no , "mhux magħruf"@mt , "inconnu"@fr , "neznámý"@cs , "nieznany"@pl , "tundmatu"@et , "onbekend"@nl , "ismeretlen"@hu , "nav zināms"@lv , "nepoznat"@hr , "ubekendt"@da , "desconocido"@es , "tuntematon"@fi , "άγνωστος"@el , "nepoznan"@sl , "непознат"@bg , "obekant"@sv ;
+        skos:topConceptOf   ns10:frequency ;
+        
+        
+        ns7:prefLabel       []  .
