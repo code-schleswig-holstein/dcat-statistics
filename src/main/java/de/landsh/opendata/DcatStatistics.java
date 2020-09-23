@@ -145,12 +145,44 @@ public class DcatStatistics {
 
         out.close();
 
+        double numberOfDatasets = global.numberOfDatasets;
+        double numberOfDistributions = global.numberOfDistributions;
+
+
+        // Statistiken des European Data Portal
+        System.out.println("## Auffindbarkeit");
+        System.out.println("- Schlüsselwörter\t" + global.datasetProperties.get(DCAT.keyword) / numberOfDatasets);
+        System.out.println("- Kategorien\t" + global.datasetProperties.get(DCAT.theme) / numberOfDatasets);
+        System.out.println("- Ortsbezogene Suche\t" + global.datasetProperties.get(DCTerms.spatial) / numberOfDatasets);
+        System.out.println("- Zeitbasierte Suche\t" + global.datasetProperties.get(DCTerms.temporal) / numberOfDatasets);
+        System.out.println("## Zugänglichkeit");
+        System.out.println("- DownloadURL\t" + global.distributionProperties.get(DCAT.downloadURL) / numberOfDistributions);
+        System.out.println("## Interoperabilität");
+        System.out.println("- Format\t" + global.distributionProperties.get(DCTerms.format) / numberOfDistributions);
+        System.out.println("- Media Type\t" + global.distributionProperties.get(DCAT.mediaType) / numberOfDistributions);
+        System.out.println("## Wiederverwendbarkeit");
+        System.out.println("- Lizenzangaben\t" + global.datasetProperties.get(DCTerms.license) / numberOfDatasets);
+        System.out.println("- Zugangsbeschränksangaben\t" + global.datasetProperties.get(DCTerms.accessRights) / numberOfDatasets);
+        System.out.println("- Kontaktinformation\t" + global.datasetProperties.get(DCAT.contactPoint) / numberOfDatasets);
+        System.out.println("- Veröffentlichende Stelle\t" + global.datasetProperties.get(DCTerms.publisher) / numberOfDatasets);
+        System.out.println("## Kontext");
+        System.out.println("- Rechte\t" + global.datasetProperties.get(DCTerms.rights) / numberOfDatasets);
+        System.out.println("- Dateigröße\t" + global.distributionProperties.get(DCAT.byteSize) / numberOfDistributions);
+        System.out.println("- Ausstellungsdatum\t" + (global.datasetProperties.get(DCTerms.issued) + global.distributionProperties.get(DCTerms.issued)) / (numberOfDistributions + numberOfDatasets));
+        System.out.println("- Änderungsdatum\t" + global.datasetProperties.get(DCTerms.modified) / numberOfDatasets);
+
     }
 
     /**
      * Check if the specified property is used for a specified dataset.
      */
     void checkDatasetProperty(Statistics statistics, Resource dataset, Property property) {
+        if(!global.datasetProperties.containsKey(property)) {
+            global.datasetProperties.put(property,0);
+        }
+        if(!statistics.datasetProperties.containsKey(property)) {
+            statistics.datasetProperties.put(property,0);
+        }
         if (dataset.hasProperty(property)) {
             final boolean isLiteral = isLiteralValue(dataset, property);
             statistics.incrementDatasetInformation(property, isLiteral, false);
@@ -162,6 +194,13 @@ public class DcatStatistics {
      * Check if the specified property is used for the specified dataset and uses one of the values from the vocabulary.
      */
     void checkDatasetProperty(Statistics statistics, Resource dataset, Property property, Set<String> validVocabulary) {
+        if(!global.datasetProperties.containsKey(property)) {
+            global.datasetProperties.put(property,0);
+        }
+        if(!statistics.datasetProperties.containsKey(property)) {
+            statistics.datasetProperties.put(property,0);
+        }
+
         if (dataset.hasProperty(property)) {
             final boolean isLiteral = isLiteralValue(dataset, property);
             final boolean isInvalid = !validVocabulary.contains(getPropertyValue(dataset, property));
@@ -194,6 +233,13 @@ public class DcatStatistics {
      * Check if the specified property is used for the specified dataset and uses one of the values from the vocabulary.
      */
     void checkDistributionProperty(Statistics statistics, Resource distribution, Property property, Set<String> validVocabulary) {
+        if (!global.distributionProperties.containsKey(property)) {
+            global.distributionProperties.put(property, 0);
+        }
+        if (!statistics.distributionProperties.containsKey(property)) {
+            statistics.distributionProperties.put(property, 0);
+        }
+
         if (distribution.hasProperty(property)) {
             final boolean isLiteral = isLiteralValue(distribution, property);
             final boolean isInvalid = !validVocabulary.contains(getPropertyValue(distribution, property));
@@ -206,6 +252,13 @@ public class DcatStatistics {
      * Check if the specified property is used for the specified dataset.
      */
     void checkDistributionProperty(Statistics statistics, Resource distribution, Property property) {
+        if (!global.distributionProperties.containsKey(property)) {
+            global.distributionProperties.put(property, 0);
+        }
+        if (!statistics.distributionProperties.containsKey(property)) {
+            statistics.distributionProperties.put(property, 0);
+        }
+
         if (distribution.hasProperty(property)) {
             final boolean isLiteral = isLiteralValue(distribution, property);
             statistics.incrementDistributionInformation(property, isLiteral, false);
@@ -243,6 +296,9 @@ public class DcatStatistics {
         checkDatasetProperty(statistics, dataset, DCTerms.temporal);
         checkDatasetProperty(statistics, dataset, DCTerms.issued);
         checkDatasetProperty(statistics, dataset, DCTerms.modified);
+        checkDatasetProperty(statistics, dataset, DCTerms.license);
+        checkDatasetProperty(statistics, dataset, DCTerms.accessRights);
+        checkDatasetProperty(statistics, dataset, DCTerms.rights);
         checkDatasetProperty(statistics, dataset, DCAT.theme);
         checkDatasetProperty(statistics, dataset, DCAT.keyword);
 
@@ -257,6 +313,7 @@ public class DcatStatistics {
             checkDistributionProperty(statistics, distribution, DCAT.accessURL);
             checkDistributionProperty(statistics, distribution, DCAT.downloadURL);
             checkDistributionProperty(statistics, distribution, DCAT.mediaType);
+            checkDistributionProperty(statistics, distribution, DCTerms.format);
             checkDistributionProperty(statistics, distribution, DCTerms.conformsTo);
             checkDistributionProperty(statistics, distribution, DCTerms.issued);
             checkDistributionProperty(statistics, distribution, DCTerms.rights);
@@ -454,7 +511,7 @@ public class DcatStatistics {
         }
 
         /**
-         * @param global    The global statistics are needed to get all header names.
+         * @param global      The global statistics are needed to get all header names.
          * @param contributor
          * @param out
          */
