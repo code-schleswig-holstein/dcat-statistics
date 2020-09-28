@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 
 import java.io.*;
 import java.util.*;
+import java.util.zip.GZIPInputStream;
 
 /**
  * Berechnet zu einem DCAT-AP.de konformen Katalog diverse Statistiken.
@@ -41,6 +42,7 @@ public class DcatStatistics {
     private Set<String> validPoliticalGeocodingLevels;
     private Set<String> validContributors;
     private Set<String> validAccrualFrequencies;
+    private Set<String> machineReadableFormat;
 
     static Collection<Resource> listDistributionsForDataset(Resource dataset) {
         final Set<Resource> result = new HashSet<>();
@@ -95,6 +97,47 @@ public class DcatStatistics {
         return result;
     }
 
+    /**
+     * Reads a RDF document contaning standard vocabulary, such as the European file formats.
+     */
+    private void addExternalVocabulary(Model model, String type, String resourceName) throws IOException {
+
+        final InputStream is;
+
+        if (resourceName.endsWith(".gz")) {
+            is = new GZIPInputStream(getClass().getResourceAsStream(resourceName));
+        } else {
+            is = getClass().getResourceAsStream(resourceName);
+        }
+
+        model.read(is, null, type);
+    }
+
+    /**
+     * Read a vocabulary file from the European Data Portal and extract information about distribution formats.
+     */
+    private Map<String, Boolean> readFormatInformation( String resourceName,  Property property) {
+
+        final Map<String, Boolean> result = new HashMap<>();
+
+        final Model model = ModelFactory.createDefaultModel();
+        model.read(getClass().getResourceAsStream(resourceName), null, "RDF/XML");
+
+        final ResIterator it = model.listSubjects();
+        while (it.hasNext()) {
+            final Resource resource = it.next();
+            final Statement statement = resource.getProperty(property);
+            if (statement != null) {
+                boolean value = statement.getObject().asLiteral().getBoolean();
+                String format = StringUtils.substringAfterLast(resource.getURI(), "/");
+                result.put(format, value);
+            }
+        }
+        return result;
+    }
+
+     Map<String, Boolean> machineReadableFormats;
+     Map<String, Boolean> nonProprietaryFormats;
     private void work() throws IOException {
 
         validFileTypes = readVocabulary("http://publications.europa.eu/resource/authority/file-type");
@@ -106,6 +149,10 @@ public class DcatStatistics {
         validContributors = readVocabulary("https://www.dcat-ap.de/def/contributors/20190531.rdf");
 
         final Model model = ModelFactory.createDefaultModel();
+
+        machineReadableFormats =      readFormatInformation("/edp-vocabularies/edp-machine-readable-format.rdf", EDP.isMachineReadable);
+        nonProprietaryFormats =     readFormatInformation("/edp-vocabularies/edp-non-proprietary-format.rdf", EDP.isNonProprietary);
+
         final File dir = new File("target/");
         final File[] files = dir.listFiles((file, name) -> name.endsWith(".ttl"));
         if (files != null) {
@@ -158,8 +205,10 @@ public class DcatStatistics {
         System.out.println("## Zugänglichkeit");
         System.out.println("- DownloadURL\t" + global.distributionProperties.get(DCAT.downloadURL) / numberOfDistributions);
         System.out.println("## Interoperabilität");
-        System.out.println("- Format\t" + global.distributionProperties.get(DCTerms.format) / numberOfDistributions);
-        System.out.println("- Media Type\t" + global.distributionProperties.get(DCAT.mediaType) / numberOfDistributions);
+        System.out.println("- Format verfügbar\t" + global.distributionProperties.get(DCTerms.format) / numberOfDistributions);
+        System.out.println("- Media Type verfügbar\t" + global.distributionProperties.get(DCAT.mediaType) / numberOfDistributions);
+        System.out.println("- Nicht-proprietär\t" + global.datasetWithAtLeastOneNonProprietaryFormat / numberOfDatasets);
+        System.out.println("- Maschinenlesbarkeit\t" + global.datasetWithAtLeastOneMachineReadableDistribution / numberOfDatasets);
         System.out.println("## Wiederverwendbarkeit");
         System.out.println("- Lizenzangaben\t" + global.datasetProperties.get(DCTerms.license) / numberOfDatasets);
         System.out.println("- Zugangsbeschränksangaben\t" + global.datasetProperties.get(DCTerms.accessRights) / numberOfDatasets);
@@ -177,11 +226,11 @@ public class DcatStatistics {
      * Check if the specified property is used for a specified dataset.
      */
     void checkDatasetProperty(Statistics statistics, Resource dataset, Property property) {
-        if(!global.datasetProperties.containsKey(property)) {
-            global.datasetProperties.put(property,0);
+        if (!global.datasetProperties.containsKey(property)) {
+            global.datasetProperties.put(property, 0);
         }
-        if(!statistics.datasetProperties.containsKey(property)) {
-            statistics.datasetProperties.put(property,0);
+        if (!statistics.datasetProperties.containsKey(property)) {
+            statistics.datasetProperties.put(property, 0);
         }
         if (dataset.hasProperty(property)) {
             final boolean isLiteral = isLiteralValue(dataset, property);
@@ -194,11 +243,11 @@ public class DcatStatistics {
      * Check if the specified property is used for the specified dataset and uses one of the values from the vocabulary.
      */
     void checkDatasetProperty(Statistics statistics, Resource dataset, Property property, Set<String> validVocabulary) {
-        if(!global.datasetProperties.containsKey(property)) {
-            global.datasetProperties.put(property,0);
+        if (!global.datasetProperties.containsKey(property)) {
+            global.datasetProperties.put(property, 0);
         }
-        if(!statistics.datasetProperties.containsKey(property)) {
-            statistics.datasetProperties.put(property,0);
+        if (!statistics.datasetProperties.containsKey(property)) {
+            statistics.datasetProperties.put(property, 0);
         }
 
         if (dataset.hasProperty(property)) {
@@ -304,11 +353,17 @@ public class DcatStatistics {
 
         final Collection<Resource> distributions = listDistributionsForDataset(dataset);
 
+        boolean hasMachineReadableDistribution = false;
+        boolean hasNonProprietaryFormat = false;
+
         for (final Resource distribution : distributions) {
             statistics.numberOfDistributions++;
             global.numberOfDistributions++;
 
-            workOnFormat(distribution, statistics, contributor);
+            final String format = workOnFormat(distribution, statistics, contributor);
+            hasMachineReadableDistribution |= machineReadableFormats.getOrDefault(format,false);
+            hasNonProprietaryFormat |= nonProprietaryFormats.getOrDefault(format,false);
+
             workOnDistributionLicense(distribution, statistics);
             checkDistributionProperty(statistics, distribution, DCAT.accessURL);
             checkDistributionProperty(statistics, distribution, DCAT.downloadURL);
@@ -319,6 +374,16 @@ public class DcatStatistics {
             checkDistributionProperty(statistics, distribution, DCTerms.rights);
             checkDistributionProperty(statistics, distribution, DCAT.byteSize);
             checkDistributionProperty(statistics, distribution, SPDX.checksum);
+        }
+
+        if (hasMachineReadableDistribution) {
+            statistics.datasetWithAtLeastOneMachineReadableDistribution++;
+            global.datasetWithAtLeastOneMachineReadableDistribution++;
+        }
+
+        if (hasNonProprietaryFormat) {
+            statistics.datasetWithAtLeastOneNonProprietaryFormat++;
+            global.datasetWithAtLeastOneNonProprietaryFormat++;
         }
     }
 
@@ -361,9 +426,9 @@ public class DcatStatistics {
 
     }
 
-    private void workOnFormat(Resource distribution, Statistics statistics, String contributor) {
-        Statement formatStatement = distribution.getProperty(DCTerms.format);
-        RDFNode format = formatStatement == null ? null : formatStatement.getObject();
+    private String workOnFormat(Resource distribution, Statistics statistics, String contributor) {
+        final Statement formatStatement = distribution.getProperty(DCTerms.format);
+        final RDFNode format = formatStatement == null ? null : formatStatement.getObject();
 
         String formatString = StringUtils.EMPTY;
 
@@ -384,6 +449,8 @@ public class DcatStatistics {
 
         statistics.formats.add(formatString);
         global.formats.add(formatString);
+
+        return formatString;
     }
 
     private void workOnIdentifier(Resource dataset, Statistics statistics) {
@@ -455,6 +522,8 @@ public class DcatStatistics {
         int identifierIsURI = 0;
         int distributionWithoutLicense = 0;
         int numberOfDatasets = 0;
+        int datasetWithAtLeastOneNonProprietaryFormat = 0;
+        int datasetWithAtLeastOneMachineReadableDistribution = 0;
 
         void incrementDatasetInformation(Property property, boolean isLiteral, boolean isInvalid) {
             datasetProperties.put(property, datasetProperties.getOrDefault(property, 0) + 1);
@@ -475,6 +544,8 @@ public class DcatStatistics {
         void writeHeader(PrintStream out) {
             out.print("contributor\t" +
                     "Number of Datasets\t" +
+                    "Datasets with machine readable distribution\t" +
+                    "Datasets with non-propietary format\t" +
                     "Datasets without contributor (bad)\t" +
                     "Datasets without identifier (bad)\t" +
                     "Datasets with URI identifier (good)\t");
@@ -519,6 +590,10 @@ public class DcatStatistics {
             out.print(contributor);
             out.print('\t');
             out.print(numberOfDatasets);
+            out.print('\t');
+            out.print(datasetWithAtLeastOneMachineReadableDistribution);
+            out.print('\t');
+            out.print(datasetWithAtLeastOneNonProprietaryFormat);
             out.print('\t');
             out.print(datasetWithoutContributor);
             out.print('\t');

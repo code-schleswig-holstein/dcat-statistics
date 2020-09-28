@@ -1,0 +1,131 @@
+@prefix adms: <http://www.w3.org/ns/adms#> .
+@prefix dcat: <http://www.w3.org/ns/dcat#> .
+@prefix dcatde: <http://dcat-ap.de/def/dcatde/> .
+@prefix dct: <http://purl.org/dc/terms/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix gsp: <http://www.opengis.net/ont/geosparql#> .
+@prefix hydra: <http://www.w3.org/ns/hydra/core#> .
+@prefix locn: <http://www.w3.org/ns/locn#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix schema: <http://schema.org/> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix spdx: <http://spdx.org/rdf/terms#> .
+@prefix time: <http://www.w3.org/2006/time> .
+@prefix vcard: <http://www.w3.org/2006/vcard/ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+<https://ckan.www.open.nrw.de/dataset/b32de71c-6045-4348-9ca7-31008d9a8ac6> a dcat:Dataset ;
+    dcatde:contributorID <http://dcat-ap.de/def/contributors/openNRW>,
+        <https://opendata.duesseldorf.de> ;
+    dcatde:maintainer [ a foaf:Organization ;
+            foaf:name "Landeshauptstadt Düsseldorf" ] ;
+    dct:creator [ a foaf:Organization ;
+            foaf:mbox "opendata@duesseldorf.de" ;
+            foaf:name "Landeshauptstadt Düsseldorf" ] ;
+    dct:description """<p>Der Datensatz enthält die jeweils aktuellste Datei mit den Werten für Stickoxide von den beiden städtischen Messstationen. Die Dateien in diesem Datensatz werden einmal pro Stunde um Messwerte für Stickstoffmonoxid und Stickstoffdioxid ergänzt. Die Werte sind in  µg/m³ angegeben.</p>
+
+<p>Die <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-stickoxide-zeitreihen-der-st%C3%A4dtischen-messstellen" target="_blank" title="Zeitreihen Stickoxidwerte">Zeitreihen</a> und die <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-stickoxide-jahresmittelwerte-d%C3%BCsseldorf-seit-1995" target="_blank" title="Jahresmittelwerte Stickoxide">Jahresmittelwerte</a> für Stickoxide in Düsseldorf sind in entsprechenden Datensätzen gespeichert. Ebenso die Daten über die anderen Schadstoffe <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-benzol-jahresmittelwerte-d%C3%BCsseldorf-seit-1995" target="_blank" title="Jahresmittelwerte Benzol">Benzol</a>, <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-ozon-%C3%BCberschreitungen-der-grenzwerte-d%C3%BCsseldorf" target="_blank" title="Ozon Grenzwertüberschreitungen">Ozon</a>, <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-ru%C3%9F-jahresmittelwerte-d%C3%BCsseldorf-seit-1995" target="_blank" title="Jahresmittelwerte Ruß">Ruß </a>und <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-feinstaub-tageswerte-d%C3%BCsseldorf" target="_blank" title="Tageswerte Feinstaub">Tageswerte für  Feinstaub</a>.</p>
+
+<p>Neben den Archivdaten für Feinstaub werden auch Daten zu <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-feinstaub-anzahl-%C3%BCberschreitungstage-d%C3%BCsseldorf" target="_blank" title="Feinstaub Überschreitungstage">Überschreitungstagen</a> und <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-feinstaub-jahresmittelwerte-d%C3%BCsseldorf-seit-1995" target="_blank" title="Feinstaub Jahresmittelwerte">Jahresmittelwerten</a> bereitgestellt.</p>
+
+<p>Die Landeshauptsstadt Düsseldorf führt Luftqualitätsmessungen durch und bewertet die Ergenisse anhand der gesetzlichen Grundlagen. Aktuell ist es das Bundesimmissionsschutzgesetz in Kombination mit der 39. Bundesimmissionschutz-Verordnung.<br />
+Weitere Informationen finden Sie auf der Seite '<a href="https://www.duesseldorf.de/umweltamt/umweltthemen-von-a-z/luft.html" target="_blank" title="Umweltamt Düsseldorf Luftqualität">Luftqualität</a>' des Umweltamtes. Die Werte der städtischen Messstationen an der <a href="https://www.duesseldorf.de/umweltamt/umweltthemen-von-a-z/luft/luftmesswerte/luftmesswerte-auf-der-dorotheenstrasse.html" target="_blank" title="Aktuelle Luftmesswerte Dorotheenstraße">Dorotheenstraße</a> und der <a href="https://www.duesseldorf.de/umweltamt/umweltthemen-von-a-z/luft/luftmesswerte/luftmesswerte-auf-der-brinckmannstrasse.html" target="_blank" title="Aktuelle Luftmesswerte Brinckmannstraße">Brinckmannstraße</a> werden stündlich aktualisiert.</p>
+
+<p>Die <a href="https://opendata.duesseldorf.de/dataset/luftmesswerte-standorte-der-st%C3%A4dtischen-messstationen" target="_blank" title="Standorte der Messstationen">Geoinformationen</a> der städtischen Messstationen sind in einem eigenen Datensatz verfügbar.</p>
+
+<p>Die Datei mit den aktuellen werten für Stickoxide enthalten folgende Spalteninformationen:</p>
+
+<ul><li>Messzeitpunkt: Datum und Uhrzeit der Messungen</li>
+	<li>Stickstoffmonoxid: Aktuelle Messwerte für NO (Stickstoffmonoxid) in  µg/m³</li>
+	<li>Stickstoffdioxid: Aktuelle Messwerte für NO2 (Stickstoffdioxid) in  µg/m³</li>
+</ul><p> </p>
+""" ;
+    dct:identifier "b32de71c-6045-4348-9ca7-31008d9a8ac6" ;
+    dct:issued "2018-11-15T09:51:54+01:00"^^xsd:dateTime ;
+    dct:modified "2020-04-06T09:47:18+02:00"^^xsd:dateTime ;
+    dct:publisher <https://ckan.www.open.nrw.de/organization/b209b0fc-4465-4ba7-925e-38ac564fd525> ;
+    dct:title "Luftmesswerte für Stickoxide - Die aktuellen Werte von Düsseldorf" ;
+    adms:identifier "b32de71c-6045-4348-9ca7-31008d9a8ac6" ;
+    dcat:contactPoint [ a vcard:Organization ;
+            vcard:fn "Landeshauptstadt Düsseldorf" ;
+            vcard:hasEmail <mailto:opendata@duesseldorf.de> ] ;
+    dcat:distribution <https://ckan.www.open.nrw.de/dataset/b32de71c-6045-4348-9ca7-31008d9a8ac6/resource/5f639492-5773-49a7-aa5c-31f54cd6327c>,
+        <https://ckan.www.open.nrw.de/dataset/b32de71c-6045-4348-9ca7-31008d9a8ac6/resource/b8c48fa3-7160-43b6-825f-75adab558946> ;
+    dcat:keyword "open-data-düsseldorf" ;
+    dcat:landingPage <https://opendata.duesseldorf.de/dataset/luftmesswerte-f%C3%BCr-stickoxide-die-aktuellen-werte-von-d%C3%BCsseldorf> ;
+    dcat:theme <http://publications.europa.eu/resource/authority/data-theme/ENVI> .
+
+<https://ckan.www.open.nrw.de/dataset/b32de71c-6045-4348-9ca7-31008d9a8ac6/resource/5f639492-5773-49a7-aa5c-31f54cd6327c> a dcat:Distribution ;
+    dct:description """<p>CSV-Datei mit fortlaufend aktualisierten Werten der Messstation an der Dorotheenstraße.</p>
+
+<p>Jede Stunde um 5 Minuten nach wird diese Datei um die aktuellen Werte für Stickstoffmonoxid und Stickstoffdioxid ergänzt.</p>
+""" ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/DEU> ;
+    dct:license <https://www.govdata.de/dl-de/zero-2-0> ;
+    dcat:accessURL <http://%3C%21--
+This%20file%20is%20not%20used%20by%20Drupal%20core%2C%20which%20uses%20theme%20functions%20instead.
+See%20http://api.drupal.org/api/function/theme_field/7%20for%20details.
+After%20copying%20this%20file%20to%20your%20theme%27s%20folder%20and%20customizing%20it%2C%20remove%20this
+HTML%20comment.
+--%3E
+%3Cdiv%20class=%22field%20field-name-field-link-remote-file%20field-type-file%20field-label-hidden%22%3E
+%20%20%20%20%3Cdiv%20class=%22field-items%22%3E
+%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class=%22field-item%20even%22%3Ehttps://www.duesseldorf.de/fileadmin/rawdata/luft/Dorotheenstrasse.csv%3C/div%3E
+%20%20%20%20%20%20%3C/div%3E
+%3C/div%3E> .
+
+<https://ckan.www.open.nrw.de/dataset/fee85fc5-2522-4234-8f67-726c4848baad/resource/e88e1fa5-6495-4c96-a525-8628fb7c78ee> a dcat:Distribution ;
+    dct:description """<p>JSON-Datei der Wohnbevölkerung insgesamt für die einzelnen Wohnquartiere nach Meldeverhältnis in Düsseldorf für das Jahr 2017</p>
+""" ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/JSON> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/DEU> ;
+    dct:license <https://www.govdata.de/dl-de/zero-2-0> ;
+    dcat:accessURL <https://opendata.duesseldorf.de/api/action/datastore/search.json?resource_id=9f1d8582-a550-44a5-b781-af76d48b1fd1> .
+
+
+<https://ckan.www.open.nrw.de/dataset/dcf6b6f7-9651-4ea5-96bc-137ed4bc3b6f/resource/273992a0-87cc-4ace-94b9-7fdcd0108fa4> a dcat:Distribution ;
+    dct:description """<p>GPX-Datei der Laufstrecke "Zoopark"</p>
+
+<p>Insbesondere für <strong>Laufeinsteiger*innen </strong>eignet sich die rund <strong>1,7 km</strong> lange Runde durch den <strong>Zoopark </strong>im Stadtteil Düsseltal. Im zweiten Weltkrieg zerstört, ist der ehemalige Tierpark im Jahr 1951 von Ulrich Wolf zum Stadtteilpark umgebaut worden und bietet Sportlerinnen und Sportlern eine paradiesische Laufrunde. Eine <strong>durchgehende Beleuchtung</strong> macht das Laufen zu jeder Zeit möglich.</p>
+
+<p>Der Start kann beliebig gewählt werden. Kostenpflichtiges Parken ist am Eisstadion möglich. Für diejenigen, die mit dem <acronym title="Öffentlicher Personennahverkehr">ÖPNV</acronym> anreisen möchten, sind die Haltestellen "Grünerstraße" und "Brehmplatz" zu nutzen.</p>
+
+<table class="contenttable stacktable large-only"><tbody><tr><td>Stadtteil</td>
+			<td>Düsseltal</td>
+		</tr><tr><td>Start und Ziel</td>
+			<td>beliebig, kostenpflichtiges Parken am Eisstadion möglich</td>
+		</tr><tr><td>Beschreibung</td>
+			<td>Rundkurs im alten Tierpark</td>
+		</tr><tr><td>Streckenbeschaffenheit</td>
+			<td>Asphalt- und Parkboden</td>
+		</tr><tr><td>Beleuchtung</td>
+			<td>vorhanden</td>
+		</tr></tbody></table><p>Weitere Informationen: <a href="https://www.duesseldorf.de/sportamt/laufen-in-duesseldorf/zoopark.html" target="_blank" title="Link zur Laufstrecke Zoopark">https://www.duesseldorf.de/sportamt/laufen-in-duesseldorf/zoopark.html</a></p>
+""" ;
+    dct:format "gpx" ;
+    dct:language <http://publications.europa.eu/resource/authority/language/DEU> ;
+    dct:license <https://www.govdata.de/dl-de/zero-2-0> ;
+    dcat:accessURL <http://%3C%21--
+This%20file%20is%20not%20used%20by%20Drupal%20core%2C%20which%20uses%20theme%20functions%20instead.
+See%20http://api.drupal.org/api/function/theme_field/7%20for%20details.
+After%20copying%20this%20file%20to%20your%20theme%27s%20folder%20and%20customizing%20it%2C%20remove%20this
+HTML%20comment.
+--%3E
+%3Cdiv%20class=%22field%20field-name-field-link-remote-file%20field-type-file%20field-label-hidden%22%3E
+%20%20%20%20%3Cdiv%20class=%22field-items%22%3E
+%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class=%22field-item%20even%22%3Ehttps://www.duesseldorf.de/fileadmin/Amt52/laufen_in_duesseldorf/laufstrecken/GPS_Track_Zoopark.gpx%3C/div%3E
+%20%20%20%20%20%20%3C/div%3E
+%3C/div%3E> .
+
+
+<https://ckan.www.open.nrw.de/dataset/b3f15c00-8ac0-460f-9788-ed7ff0409357/resource/25cadb30-651f-48e9-8fe0-7664c5c8ceec> a dcat:Distribution ;
+    dct:description """<p>CSV-Datei des täglichen Wasserstand des Rheins um 5.00 Uhr am Düsseldorfer Pegel für das Jahr 2002</p>
+""" ;
+    dct:format <http://publications.europa.eu/resource/authority/file-type/CSV> ;
+    dct:language <http://publications.europa.eu/resource/authority/language/DEU> ;
+    dct:license <https://www.govdata.de/dl-de/zero-2-0> ;
+    dcat:accessURL <https://opendata.duesseldorf.de/sites/default/files/Rheinpegel_Tag%202002_0.csv> .
